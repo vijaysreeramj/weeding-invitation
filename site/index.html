@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/bloom.jpg">
+<link rel="preload" as="image" href="img/p7.jpg">
 <link rel="icon" type="image/png" href="img/vs-icon.png">
 <style>
 :root{
@@ -155,7 +155,7 @@ body.sealed{overflow:hidden;height:100dvh}
 /* ============ cover ============ */
 #cover{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;
   overflow:hidden;color:var(--white)}
-#cover .pic{position:absolute;inset:0;background:url(img/bloom.jpg) center/cover no-repeat;
+#cover .pic{position:absolute;inset:0;background:url(img/p7.jpg) center 34%/cover no-repeat;
   animation:kb 26s ease-in-out infinite alternate}
 @keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.16)}}
 #cover .veil{position:absolute;inset:0;z-index:2;pointer-events:none;
@@ -189,10 +189,10 @@ section.cream{background:var(--paper)}
 .photobg{position:absolute;inset:0;background-size:cover;background-position:center;
   animation:kb 34s ease-in-out infinite alternate}
 .photowash{position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,var(--paper) 0%,rgba(253,243,240,.9) 18%,
-    rgba(253,243,240,.86) 50%,rgba(253,243,240,.9) 82%,var(--paper) 100%)}
-.photowash.blush{background:linear-gradient(180deg,var(--paper-2) 0%,rgba(251,232,229,.91) 18%,
-    rgba(251,232,229,.87) 50%,rgba(251,232,229,.91) 82%,var(--paper-2) 100%)}
+  background:linear-gradient(180deg,var(--paper) 0%,rgba(253,243,240,.82) 14%,
+    rgba(253,243,240,.68) 50%,rgba(253,243,240,.82) 86%,var(--paper) 100%)}
+.photowash.blush{background:linear-gradient(180deg,var(--paper-2) 0%,rgba(251,232,229,.84) 14%,
+    rgba(251,232,229,.7) 50%,rgba(251,232,229,.84) 86%,var(--paper-2) 100%)}
 section.blushbg{background:var(--paper-2)}
 h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
   font-size:clamp(.72rem,2.2vw,.86rem);color:var(--deep);font-weight:500}
@@ -246,7 +246,7 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
 .cdsec{color:var(--white)}
 .cdsec .pic{position:absolute;inset:0;background:url(img/p2.jpg) center 34%/cover no-repeat;
   animation:kb 34s ease-in-out infinite alternate}
-.cdsec .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(150,85,95,.55),rgba(120,60,70,.6))}
+.cdsec .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(140,72,84,.44),rgba(110,52,62,.52))}
 .cdsec h2.title,.cdsec .subtitle{color:#fff4f2}
 .cdgrid{display:flex;justify-content:center;gap:0;margin-top:1.4rem}
 .cdcell{padding:0 clamp(.7rem,3.4vw,1.6rem)}
@@ -275,7 +275,7 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
 .venuesec .pic{position:absolute;inset:0;background:url(img/p5.jpg) center 30%/cover no-repeat;
   animation:kb 30s ease-in-out infinite alternate}
 .venuesec .veil{position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(120,60,70,.25),rgba(253,243,240,.92) 52%)}
+  background:linear-gradient(90deg,rgba(120,60,70,.18),rgba(253,243,240,.84) 56%)}
 .venuecard{position:relative;z-index:3;margin-left:auto;width:min(340px,80%);text-align:center}
 .venuecard .pin{width:24px;height:24px;margin:0 auto;color:var(--rose-dp)}
 .venuecard .label{margin-top:.2rem}
@@ -375,7 +375,7 @@ body.entering{overflow:hidden}
   .story .txt{text-align:center}
   .story .sign{text-align:center}
   .cers{grid-template-columns:1fr}
-  .venuesec .veil{background:linear-gradient(180deg,rgba(120,60,70,.3),rgba(253,243,240,.93) 42%)}
+  .venuesec .veil{background:linear-gradient(180deg,rgba(120,60,70,.24),rgba(253,243,240,.86) 44%)}
   .venuecard{margin:0 auto;width:min(340px,92%)}
   .cdcell{padding:0 .55rem}
   .evcol{padding:0 .6rem}
@@ -508,7 +508,7 @@ body.entering{overflow:hidden}
 
 <!-- ============ 6. CEREMONIES ============ -->
 <section class="cream" id="ceremonies">
-  <div class="photobg" style="background-image:url(img/p4.jpg)"></div>
+  <div class="photobg" style="background-image:url(img/p6.jpg)"></div>
   <div class="photowash"></div>
   <svg class="flora tr" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
   <svg class="flora bl" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
@@ -995,9 +995,21 @@ var burstHearts;
   }
   btn.addEventListener('click',function(){
     if(!ctx){ ctx=new (window.AudioContext||window.webkitAudioContext)();
-      gain=ctx.createGain(); gain.gain.value=.5; gain.connect(ctx.destination); }
+      gain=ctx.createGain(); gain.gain.value=0; gain.connect(ctx.destination); }
     on=!on; btn.classList.toggle('on',on); btn.innerHTML=on?'&#9835;':'&#9834;';
-    if(on){ ctx.resume(); play(); } else { clearTimeout(loop); }
+    var now=ctx.currentTime;
+    gain.gain.cancelScheduledValues(now);
+    gain.gain.setValueAtTime(gain.gain.value,now);
+    if(on){
+      ctx.resume();
+      gain.gain.linearRampToValueAtTime(.5,now+.25);
+      play();
+    } else {
+      /* silence the notes already queued, then stop the loop */
+      clearTimeout(loop);
+      gain.gain.linearRampToValueAtTime(0,now+.12);
+      setTimeout(function(){ if(!on) ctx.suspend(); },200);
+    }
   });
 })();
 </script>
