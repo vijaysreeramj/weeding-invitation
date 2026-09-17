@@ -58,6 +58,71 @@ h1,h2,h3{font-weight:400;margin:0}
 @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
 @keyframes swayleaf{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
 
+/* ============ envelope intro ============ */
+body.sealed{overflow:hidden;height:100dvh}
+#env{position:fixed;inset:0;z-index:990;display:grid;place-items:center;overflow:hidden;
+  background:linear-gradient(165deg,#fdf3f0 0%,#f8e0dd 48%,#efc9c9 100%);
+  transition:opacity .6s ease 1.9s}
+#env::after{content:"";position:absolute;inset:14px;border:1px solid rgba(201,168,106,.42);
+  pointer-events:none}
+#env.open{opacity:0;pointer-events:none}
+#env.gone{display:none}
+.env-top{position:relative;z-index:2;text-align:center;padding:0 20px}
+.env-top .lbl,.env-top .nm,.env-top .dt,.env-top .hint{transition:opacity .4s ease}
+#env.open .lbl,#env.open .nm,#env.open .dt,#env.open .hint{opacity:0}
+.env-top .lbl{font-family:var(--sans);font-weight:500;letter-spacing:.4em;text-transform:uppercase;
+  font-size:.62rem;color:var(--rose-dp)}
+.env-top .nm{font-family:var(--script);font-size:clamp(1.9rem,7vw,2.8rem);color:var(--ink);
+  line-height:1.2;margin:.3rem 0 .1rem}
+.env-top .nm .a{display:block;font-size:.5em;color:var(--rose-dp);margin:-.1em 0}
+.env-top .dt{font-family:var(--sans);font-weight:500;letter-spacing:.3em;text-transform:uppercase;
+  font-size:.58rem;color:var(--ink-2);margin-bottom:1.5rem}
+.envelope{position:relative;width:min(320px,82vw);aspect-ratio:33/23;perspective:1000px;margin:0 auto}
+.env-body{position:absolute;inset:0;background:#fdf4ef;border:1px solid #e8cac4;border-radius:8px;
+  box-shadow:0 26px 60px -20px rgba(150,80,90,.42)}
+.env-card{position:absolute;left:5.5%;right:5.5%;top:7%;bottom:10%;z-index:2;background:#fffcfa;
+  border:1px solid #f0d8d2;border-radius:6px;box-shadow:0 4px 16px rgba(150,90,90,.14);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:10px;
+  transition:transform .9s cubic-bezier(.22,1,.36,1) 1.05s}
+#env.open .env-card{transform:translateY(-94%) scale(1.04)}
+.env-card img{width:clamp(46px,13vw,62px)}
+.env-card .c-nm{font-family:var(--script);font-size:1.15rem;color:var(--ink);line-height:1.1}
+.env-card .c-dt{font-family:var(--sans);font-weight:500;font-size:.5rem;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--rose-dp)}
+.env-front{position:absolute;inset:0;z-index:3;background:linear-gradient(180deg,#fcf1ec,#f6e2dc);
+  border-radius:0 0 8px 8px;clip-path:polygon(0 0,50% 54%,100% 0,100% 100%,0 100%)}
+.env-vline{position:absolute;inset:0;z-index:4;background:rgba(232,202,196,.85);
+  clip-path:polygon(0 0,50% 54%,100% 0,100% 1.8%,50% 55.8%,0 1.8%)}
+.env-flap{position:absolute;left:0;right:0;top:0;height:56%;z-index:5;
+  background:linear-gradient(180deg,#f8e6e0,#f2d9d2);clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top center;border-radius:8px 8px 0 0;backface-visibility:visible;
+  transition:transform .75s cubic-bezier(.5,0,.3,1) .35s,z-index 0s linear .75s}
+#env.open .env-flap{transform:rotateX(180deg);z-index:1}
+#wax{position:absolute;left:50%;top:50%;transform:translate(-50%,-46%);z-index:6;
+  width:82px;height:82px;border:0;padding:0;cursor:pointer;
+  border-radius:47% 53% 52% 48%/50% 46% 54% 50%;
+  background:radial-gradient(circle at 36% 30%,#eab8ae,#d08d88 50%,#b87275 78%,#a45f66);
+  box-shadow:0 6px 16px rgba(150,80,90,.45),inset 0 2px 5px rgba(255,235,230,.6),
+    inset 0 -6px 10px rgba(140,70,80,.42);
+  display:grid;place-items:center;-webkit-tap-highlight-color:transparent;
+  animation:waxpulse 2.6s ease-in-out infinite;transition:transform .45s ease,opacity .45s ease}
+#wax::before{content:"";position:absolute;inset:9px;border-radius:48% 52% 50% 50%/51% 49% 52% 48%;
+  border:1.5px solid rgba(255,240,236,.45)}
+#wax img{width:50px;opacity:.92;
+  filter:drop-shadow(0 1px 0 rgba(255,240,234,.6)) drop-shadow(0 -1px 1px rgba(130,60,70,.45))}
+#wax:active{transform:translate(-50%,-46%) scale(.94)}
+@keyframes waxpulse{
+  0%,100%{box-shadow:0 6px 16px rgba(150,80,90,.45),0 0 0 0 rgba(201,132,140,.45),
+    inset 0 2px 5px rgba(255,235,230,.6),inset 0 -6px 10px rgba(140,70,80,.42)}
+  60%{box-shadow:0 6px 16px rgba(150,80,90,.45),0 0 0 20px rgba(201,132,140,0),
+    inset 0 2px 5px rgba(255,235,230,.6),inset 0 -6px 10px rgba(140,70,80,.42)}}
+#env.open #wax{transform:translate(-50%,-46%) scale(1.25) rotate(-12deg);opacity:0;animation:none}
+.env-top .hint{font-family:var(--sans);font-weight:500;font-size:.62rem;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--rose-dp);margin-top:1.7rem}
+@media (prefers-reduced-motion:reduce){
+  #env,.env-flap,.env-card,#wax{transition:none;animation:none}
+}
+
 /* ============ top bar ============ */
 .bar{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;
   justify-content:space-between;padding:14px 18px;pointer-events:none}
@@ -310,7 +375,31 @@ body.entering{overflow:hidden}
 }
 </style>
 </head>
-<body>
+<body class="sealed">
+
+<div id="env" role="dialog" aria-label="Wedding invitation envelope">
+  <div class="env-top">
+    <p class="lbl">You Are Invited</p>
+    <p class="nm">Vijaysreeram<span class="a">and</span>Suganthini</p>
+    <p class="dt">14 &amp; 15 November 2026 &middot; Kurunjeri</p>
+    <div class="envelope">
+      <div class="env-body" aria-hidden="true"></div>
+      <div class="env-card" aria-hidden="true">
+        <img src="../img/vs-logo.png" alt="">
+        <p class="c-nm">Vijaysreeram &amp; Suganthini</p>
+        <p class="c-dt">Nov 14 &amp; 15, 2026</p>
+      </div>
+      <div class="env-front" aria-hidden="true"></div>
+      <div class="env-vline" aria-hidden="true"></div>
+      <div class="env-flap" aria-hidden="true"></div>
+      <button id="wax" aria-label="Open the invitation">
+        <img src="../img/vs-logo.png" alt="" aria-hidden="true">
+      </button>
+    </div>
+    <p class="hint">Tap the seal to open</p>
+  </div>
+</div>
+<noscript><style>#env{display:none}body.sealed{overflow:auto;height:auto}</style></noscript>
 
 <canvas id="petals"></canvas>
 <div id="veilflash"></div>
@@ -615,6 +704,22 @@ body.entering{overflow:hidden}
 </svg>
 
 <script>
+/* ---------- envelope ---------- */
+(function(){
+  var env=document.getElementById('env'), wax=document.getElementById('wax');
+  function open(){
+    if(env.classList.contains('open')) return;
+    env.classList.add('open');
+    document.body.classList.remove('sealed');
+    var done=function(){ env.classList.add('gone'); env.setAttribute('aria-hidden','true'); };
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){ done(); return; }
+    setTimeout(function(){ if(window.burstHearts) window.burstHearts(); },1500);
+    setTimeout(done,2600);
+  }
+  wax.addEventListener('click',open);
+  if(location.hash==='#open'){ env.classList.add('open','gone'); document.body.classList.remove('sealed'); }
+})();
+
 /* ---------- nav ---------- */
 var burger=document.getElementById('burger'), nav=document.getElementById('nav');
 burger.addEventListener('click',function(){
@@ -817,7 +922,7 @@ var burstHearts;
   }
   var N=reduce?0:Math.min(30,Math.round(innerWidth/42));
   for(var i=0;i<N;i++) ps.push(mk(Math.random()*H));
-  burstHearts=function(){
+  window.burstHearts=burstHearts=function(){
     if(reduce) return;
     for(var i=0;i<16;i++){
       var p=mk(H+20);
@@ -852,7 +957,7 @@ var burstHearts;
     }
     requestAnimationFrame(draw);
   }
-  if(!reduce) draw(); else burstHearts=function(){};
+  if(!reduce) draw(); else window.burstHearts=burstHearts=function(){};
 })();
 
 /* ---------- soft chime ---------- */
