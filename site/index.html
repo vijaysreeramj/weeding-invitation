@@ -287,6 +287,7 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
   letter-spacing:.2em;text-transform:uppercase;padding:.75rem 1.6rem;border-radius:999px;
   text-decoration:none;transition:.3s}
 .btn:hover{background:var(--rose);color:#fff}
+.btn svg{width:15px;height:15px;flex:0 0 auto}
 .btn.solid{background:var(--rose);color:#fff}
 .btn.solid:hover{background:var(--rose-dp);border-color:var(--rose-dp)}
 
@@ -578,7 +579,11 @@ body.entering{overflow:hidden}
       <p>Kurunjeri, Tamil Nadu</p>
       <a class="btn rippleable" target="_blank" rel="noopener"
          href="https://www.google.com/maps/search/?api=1&amp;query=Sri+Rudhram+Mahal%2C+Pethappampati+Rd%2C+Kurunjeri%2C+Tamil+Nadu+642154">
-        <span aria-hidden="true">&#128506;</span> Open in Google Maps</a>
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M9 4.2 3.4 6.1v13.7L9 17.9l6 2 5.6-1.9V4.3L15 6.2l-6-2z"/>
+          <path d="M9 4.2v13.7M15 6.2v13.7"/>
+        </svg> Open in Google Maps</a>
 
       <div class="routemap">
         <svg viewBox="0 0 600 215" role="img"
