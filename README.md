@@ -15,7 +15,7 @@ site/
   img/vs-logo.png         V&S monogram, dark gold (light backgrounds)
   img/vs-logo-light.png   V&S monogram, pale gold (dark backgrounds)
   img/vs-icon.png         browser tab icon
-netlify.toml              publishes site/ with long cache headers on img/
+vercel.json               serves site/ with long cache headers on img/
 ```
 
 ## Running locally
@@ -28,8 +28,12 @@ Then open http://localhost:8777/. Add `#open` to the URL to skip the envelope.
 
 ## Deploying
 
-Drag the `site` folder onto https://app.netlify.com/drop, or connect this repo —
-`netlify.toml` already sets `publish = "site"`.
+Hosted on Vercel. Import this repo at https://vercel.com/new — `vercel.json`
+already sets `outputDirectory` to `site`, so there is nothing to configure and
+no build step to run. Every push to `main` redeploys.
+
+If Vercel does not pick up `vercel.json`, set **Root Directory** to `site` in
+Project Settings instead.
 
 ## Still to do
 
