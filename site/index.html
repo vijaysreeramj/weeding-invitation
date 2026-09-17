@@ -37,7 +37,8 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:var(--serif);background:var(--paper);color:var(--ink);
-  font-size:18px;font-weight:500;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  font-size:18px;font-weight:500;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1,'onum' 0}
 img{max-width:100%;display:block}
 a{color:inherit}
 h1,h2,h3{font-weight:400;margin:0}
@@ -309,8 +310,10 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
   font-style:italic;letter-spacing:.04em}
 .routemap .cap{font-family:var(--sans);font-weight:500;font-size:7.5px;letter-spacing:.24em;
   text-transform:uppercase;fill:var(--rose-dp)}
-.routemap .foot{text-align:center;font-family:var(--sans);font-weight:500;font-size:.56rem;
-  letter-spacing:.24em;text-transform:uppercase;color:var(--rose-dp);padding:.1rem 0 .3rem}
+.routemap .foot{text-align:center;font-family:var(--sans);font-weight:500;
+  font-size:clamp(.4rem,1.55vw,.56rem);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--rose-dp);padding:.25rem 0 .35rem;white-space:nowrap;overflow:hidden}
+.routemap .foot i{font-style:normal;margin:0 .35em;opacity:.75}
 @media (prefers-reduced-motion:reduce){
   .routemap .town,.routemap .dest{opacity:1;transform:none}
   .routemap .pulse{animation:none;opacity:0}
@@ -641,7 +644,7 @@ body.entering{overflow:hidden}
             <text class="lbl sm" x="472" y="132" text-anchor="middle">Kurunjeri</text>
           </g>
         </svg>
-        <p class="foot">Udumalpet &nbsp;&rarr;&nbsp; Pethappampati Rd &nbsp;&rarr;&nbsp; Venue</p>
+        <p class="foot">Udumalpet<i>&rarr;</i>Pethappampati Rd<i>&rarr;</i>Venue</p>
       </div>
     </div>
   </div>
