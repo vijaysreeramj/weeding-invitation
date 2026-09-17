@@ -298,41 +298,14 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
 .btn.solid{background:var(--rose);color:#fff}
 .btn.solid:hover{background:var(--rose-dp);border-color:var(--rose-dp)}
 
-/* ---- meet the bride & groom ---- */
-.pair{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(.6rem,3vw,1.6rem);
-  align-items:start;margin-top:1.6rem}
-.who{text-align:center}
-.who .mark{width:34px;height:31px;margin:0 auto .5rem;display:block}
-.who .role{font-family:var(--sans);font-weight:500;letter-spacing:.3em;text-transform:uppercase;
-  font-size:.56rem;color:var(--rose-dp)}
-.who h3{font-family:var(--script);font-size:clamp(1.6rem,5.4vw,2.2rem);color:var(--ink);
-  line-height:1.2;margin:.1rem 0 .4rem}
-.who p{font-size:.98rem;color:var(--ink-2);line-height:1.7}
-.who .tagline{font-family:var(--script);font-size:1.15rem;color:var(--rose-dp);margin-top:.35rem}
-.pair .amp{font-family:var(--script);font-size:clamp(1.6rem,5vw,2.2rem);color:var(--rose);
-  align-self:center;padding-top:1.4rem}
+/* ---- our album ---- */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem;margin-top:1.5rem}
+.grid figure{margin:0;overflow:hidden;border-radius:6px;aspect-ratio:1;
+  background:var(--blush);box-shadow:0 10px 24px -18px rgba(120,60,70,.6)}
+.grid img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+.grid figure:hover img{transform:scale(1.07)}
+@media (max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}}
 
-/* ---- who knows us better ---- */
-.quiz{margin-top:2.6rem}
-.quizhead{font-family:var(--sans);font-weight:500;letter-spacing:.28em;text-transform:uppercase;
-  font-size:clamp(.66rem,2vw,.78rem);color:var(--deep)}
-.quizsub{font-family:var(--script);font-size:1.15rem;color:var(--rose-dp);margin-top:.15rem}
-.q{background:var(--white);border:1px solid rgba(229,169,173,.5);border-radius:14px;
-  padding:1rem .9rem .9rem;margin-top:.8rem;box-shadow:0 10px 26px -22px rgba(120,60,70,.6)}
-.qt{font-size:1.02rem;color:var(--ink);margin-bottom:.7rem}
-.opts{display:flex;gap:.5rem;justify-content:center}
-.opts button{flex:1;max-width:190px;background:var(--paper);border:1px solid rgba(229,169,173,.55);
-  border-radius:999px;padding:.6rem .5rem;font-family:var(--serif);font-weight:500;font-size:.95rem;
-  color:var(--ink);cursor:pointer;transition:.25s}
-.opts button:hover{background:var(--blush)}
-.q.done .opts button{cursor:default;opacity:.55}
-.q.done .opts button.is{opacity:1;background:var(--rose);border-color:var(--rose);color:#fff}
-.q .ans{max-height:0;overflow:hidden;opacity:0;font-family:var(--script);font-size:1.15rem;
-  color:var(--rose-dp);transition:max-height .5s ease,opacity .5s ease,margin .5s ease}
-.q.done .ans{max-height:80px;opacity:1;margin-top:.7rem}
-.score{margin-top:1.1rem;font-family:var(--script);font-size:1.3rem;color:var(--rose-dp);min-height:1.6em}
-
-/* ---- you were there ---- */
 .cam{width:34px;height:30px;margin:.9rem auto 0;display:block;color:var(--rose-dp)}
 .album{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-top:1.6rem}
 .slot{width:clamp(74px,19vw,104px);background:rgba(255,255,255,.65);padding:6px 6px 20px;
@@ -353,12 +326,6 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
 .qrbox p{font-family:var(--sans);font-weight:500;letter-spacing:.22em;text-transform:uppercase;
   font-size:.56rem;color:var(--rose-dp);margin-top:.5rem}
 .laterline{font-family:var(--script);font-size:1.1rem;color:var(--rose-dp);margin-top:1.2rem}
-@media (max-width:640px){
-  .pair{grid-template-columns:1fr;gap:1.6rem}
-  .pair .amp{padding:0}
-  .opts{flex-direction:column;align-items:center}
-  .opts button{width:100%;max-width:none}
-}
 @media (prefers-reduced-motion:reduce){.slot{animation:none}}
 
 /* illustrated route map */
@@ -522,12 +489,11 @@ body.entering{overflow:hidden}
   <ul>
     <li><a href="#surprise">A Little Surprise</a></li>
     <li><a href="#story">Our Story</a></li>
-    <li><a href="#meet">Meet the Bride &amp; Groom</a></li>
     <li><a href="#countdown">Countdown</a></li>
     <li><a href="#ceremonies">Ceremonies</a></li>
     <li><a href="#venue">Venue</a></li>
     <li><a href="#dates">Save the Dates</a></li>
-    <li><a href="#youwerethere">You Were There</a></li>
+    <li><a href="#album">Our Album</a></li>
     <li><a href="#wishes">Wishes Wall</a></li>
   </ul>
 </nav>
@@ -582,41 +548,6 @@ body.entering{overflow:hidden}
            we're so excited to begin this beautiful chapter &mdash; for real, together.</p>
         <p class="sign">Vijaysreeram &amp; Suganthini</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ MEET THE BRIDE & GROOM ============ -->
-<section class="blushbg" id="meet">
-  <svg class="flora tr" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
-  <svg class="flora bl" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
-  <div class="wrap">
-    <h2 class="title rv">Meet the Bride &amp; Groom</h2>
-    <p class="subtitle rv d1">The two of us, briefly</p>
-    <div class="pair">
-      <div class="who rv d1">
-        <svg class="mark" viewBox="0 0 24 22" style="fill:var(--rose)"><use href="#hrt"/></svg>
-        <div class="role">The Bride</div>
-        <h3>Suganthini</h3>
-        <p>Coffee. Dreams. Overthinking.</p>
-        <p class="tagline">Future Mrs. Vijaysreeram</p>
-      </div>
-      <div class="amp rv d2">&amp;</div>
-      <div class="who rv d3">
-        <svg class="mark" viewBox="0 0 24 22" style="fill:#f0ded9;stroke:var(--rose);stroke-width:1.2"><use href="#hrt"/></svg>
-        <div class="role">The Groom</div>
-        <h3>Vijaysreeram</h3>
-        <!-- swap these two lines for his own traits / inside jokes -->
-        <p>Code. Cricket. One more episode.</p>
-        <p class="tagline">Always five minutes away</p>
-      </div>
-    </div>
-
-    <div class="quiz rv d3">
-      <h3 class="quizhead">Who Knows Us Better?</h3>
-      <p class="quizsub">Tap your guess</p>
-      <div id="quiz"></div>
-      <p class="score" id="score"></p>
     </div>
   </div>
 </section>
@@ -812,21 +743,32 @@ body.entering{overflow:hidden}
   </div>
 </section>
 
-<!-- ============ YOU WERE THERE ============ -->
-<section class="blushbg" id="youwerethere">
+<!-- ============ OUR ALBUM ============ -->
+<section class="blushbg" id="album">
   <svg class="flora tl" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
   <svg class="flora br" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
   <div class="wrap">
-    <h2 class="title rv">You Were There</h2>
-    <p class="subtitle rv d1">Show us your view</p>
+    <h2 class="title rv">Our Album</h2>
+    <p class="subtitle rv d1">Ours and yours, in one place</p>
     <svg class="cam rv d1" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="1.4"
          stroke-linejoin="round"><path d="M2 6h4l2-3h8l2 3h4v13H2z"/><circle cx="12" cy="12" r="4.2"/></svg>
-    <p class="lead rv d2" style="margin-top:1rem">
+
+    <!-- our photos — swap these for whichever you want on show -->
+    <div class="grid rv d2">
+      <figure><img src="img/p7.jpg" alt="" loading="lazy"></figure>
+      <figure><img src="img/p3.jpg" alt="" loading="lazy"></figure>
+      <figure><img src="img/p6.jpg" alt="" loading="lazy"></figure>
+      <figure><img src="img/p1.jpg" alt="" loading="lazy"></figure>
+      <figure><img src="img/p5.jpg" alt="" loading="lazy"></figure>
+      <figure><img src="img/p2.jpg" alt="" loading="lazy"></figure>
+    </div>
+
+    <p class="lead rv d2" style="margin-top:1.8rem">
       The photographer will catch one wedding. You will see another one entirely &mdash;
       the laughing, the in-between moments, the ones nobody was posing for.
       Add yours, and the album becomes all of ours.
     </p>
-    <div class="album rv d2">
+    <div class="album rv d3">
       <div class="slot"><i>+</i></div>
       <div class="slot"><i>+</i></div>
       <div class="slot"><i>+</i></div>
@@ -843,7 +785,6 @@ body.entering{overflow:hidden}
       <img src="img/qr.svg" alt="QR code to this invitation" loading="lazy">
       <p>Scan at the venue</p>
     </div>
-    <p class="laterline rv d3">The album opens on 15 November</p>
   </div>
 </section>
 
@@ -1044,55 +985,6 @@ var io=new IntersectionObserver(function(es){
   es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
 },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
 [].forEach.call(document.querySelectorAll('.rv'),function(el){ io.observe(el); });
-
-/* ---------- who knows us better ----------
-   Edit the questions below. "a" is the true answer: 'b' = bride, 'g' = groom.
-   "note" is the line that appears once someone has guessed. ------------------ */
-var BRIDE='Suganthini', GROOM='Vijaysreeram';
-var QUIZ=[
-  {q:'Who takes longer to get ready?',        a:'b', note:'No contest. He waits by the door.'},
-  {q:'Who is more dramatic?',                 a:'g', note:'One sneeze and he is planning his funeral.'},
-  {q:'Who says sorry first?',                 a:'g', note:'Usually before he knows what he did.'},
-  {q:'Who falls asleep during the movie?',    a:'g', note:'Every single time. Every single film.'},
-  {q:'Who is always hungry?',                 a:'b', note:'Ask her what is for dinner. Mid-lunch.'},
-  {q:'Who actually planned this wedding?',    a:'b', note:'He picked the food. That is the full list.'}
-];
-(function(){
-  var box=document.getElementById('quiz'), out=document.getElementById('score');
-  if(!box) return;
-  var asked=0, right=0;
-  QUIZ.forEach(function(item){
-    var card=document.createElement('div'); card.className='q';
-    var q=document.createElement('p'); q.className='qt'; q.textContent=item.q;
-    var opts=document.createElement('div'); opts.className='opts';
-    var ans=document.createElement('p'); ans.className='ans';
-
-    ['b','g'].forEach(function(k){
-      var b=document.createElement('button');
-      b.type='button';
-      b.textContent=(k==='b'?BRIDE:GROOM);
-      b.addEventListener('click',function(){
-        if(card.classList.contains('done')) return;
-        card.classList.add('done');
-        opts.querySelectorAll('button').forEach(function(x,i){
-          if((i===0?'b':'g')===item.a) x.classList.add('is');
-        });
-        ans.textContent=(k===item.a?'Correct — ':'Actually — ')+item.note;
-        asked++; if(k===item.a) right++;
-        if(window.burstHearts && k===item.a) window.burstHearts();
-        if(asked===QUIZ.length){
-          out.textContent = right===QUIZ.length ? 'All '+right+' right. You know us far too well.'
-            : right===0 ? 'Not one right. We will explain everything at the reception.'
-            : 'You got '+right+' of '+QUIZ.length+' right.';
-        }
-      });
-      opts.appendChild(b);
-    });
-
-    card.appendChild(q); card.appendChild(opts); card.appendChild(ans);
-    box.appendChild(card);
-  });
-})();
 
 /* ---------- countdown to the muhurtham ---------- */
 var TARGET=new Date('2026-11-15T06:00:00+05:30').getTime();
