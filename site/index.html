@@ -299,12 +299,6 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
 .btn.solid:hover{background:var(--rose-dp);border-color:var(--rose-dp)}
 
 /* ---- our album ---- */
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem;margin-top:1.5rem}
-.grid figure{margin:0;overflow:hidden;border-radius:6px;aspect-ratio:1;
-  background:var(--blush);box-shadow:0 10px 24px -18px rgba(120,60,70,.6)}
-.grid img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
-.grid figure:hover img{transform:scale(1.07)}
-@media (max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}}
 
 .cam{width:34px;height:30px;margin:.9rem auto 0;display:block;color:var(--rose-dp)}
 .album{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-top:1.6rem}
@@ -753,17 +747,7 @@ body.entering{overflow:hidden}
     <svg class="cam rv d1" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="1.4"
          stroke-linejoin="round"><path d="M2 6h4l2-3h8l2 3h4v13H2z"/><circle cx="12" cy="12" r="4.2"/></svg>
 
-    <!-- our photos — swap these for whichever you want on show -->
-    <div class="grid rv d2">
-      <figure><img src="img/p7.jpg" alt="" loading="lazy"></figure>
-      <figure><img src="img/p3.jpg" alt="" loading="lazy"></figure>
-      <figure><img src="img/p6.jpg" alt="" loading="lazy"></figure>
-      <figure><img src="img/p1.jpg" alt="" loading="lazy"></figure>
-      <figure><img src="img/p5.jpg" alt="" loading="lazy"></figure>
-      <figure><img src="img/p2.jpg" alt="" loading="lazy"></figure>
-    </div>
-
-    <p class="lead rv d2" style="margin-top:1.8rem">
+    <p class="lead rv d2" style="margin-top:1.2rem">
       The photographer will catch one wedding. You will see another one entirely &mdash;
       the laughing, the in-between moments, the ones nobody was posing for.
       Add yours, and the album becomes all of ours.
