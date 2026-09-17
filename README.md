@@ -11,7 +11,6 @@ A single-page animated wedding invitation.
 ```
 site/
   index.html              the invitation — blush watercolour, no build step
-  v1/index.html           earlier maroon & gold version, kept for reference
   img/                    photos, backdrops and the VS monogram
   img/hero1..3.jpg        the three hero photos that slide horizontally
   img/vs-logo.png         V&S monogram, dark gold (light backgrounds)
@@ -26,8 +25,7 @@ vercel.json               serves site/ with long cache headers on img/
 python3 -m http.server 8777 --directory site
 ```
 
-Then open http://localhost:8777/. Add `#open` to skip the envelope. The earlier
-maroon version is at http://localhost:8777/v1/.
+Then open http://localhost:8777/. Add `#open` to skip the envelope.
 
 ## Deploying
 
