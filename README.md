@@ -10,7 +10,9 @@ A single-page animated wedding invitation.
 
 ```
 site/
-  index.html              the whole invitation — no build step
+  index.html              maroon & gold version — no build step
+  v2/index.html           blush watercolour version (12 scrolling panels)
+  v2/img/                 bloom / sky / vine backdrops for the blush version
   img/hero1..3.jpg        the three hero photos that slide horizontally
   img/vs-logo.png         V&S monogram, dark gold (light backgrounds)
   img/vs-logo-light.png   V&S monogram, pale gold (dark backgrounds)
@@ -24,7 +26,8 @@ vercel.json               serves site/ with long cache headers on img/
 python3 -m http.server 8777 --directory site
 ```
 
-Then open http://localhost:8777/. Add `#open` to the URL to skip the envelope.
+Then open http://localhost:8777/ for the maroon version (add `#open` to skip the
+envelope) or http://localhost:8777/v2/ for the blush watercolour version.
 
 ## Deploying
 
@@ -42,7 +45,8 @@ Project Settings instead.
   DevCutz's own photos so the credit is accurate.
 - **Our Moments.** The gallery section is commented out in `index.html`. Drop two
   photos in as `img/photo1.jpg` and `img/photo2.jpg`, then remove the comment
-  markers around that block.
+  markers around that block. In `v2/`, swap the `.pola i` and `.mem i` blocks for
+  real `<img>` tags — both are marked with a comment.
 - **Shared album.** The "Add Your Photos" button points at a placeholder
   `photos.google.com` link — swap in the real shared-album URL.
 - **Wishes & song requests.** These currently save to each visitor's own browser
