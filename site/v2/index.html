@@ -326,8 +326,8 @@ body.entering{overflow:hidden}
 
 <nav id="nav">
   <ul>
-    <li><a href="#dates">Save the Dates</a></li>
     <li><a href="#surprise">A Little Surprise</a></li>
+    <li><a href="#dates">Save the Dates</a></li>
     <li><a href="#story">Our Story</a></li>
     <li><a href="#countdown">Countdown</a></li>
     <li><a href="#ceremonies">Ceremonies</a></li>
@@ -346,12 +346,34 @@ body.entering{overflow:hidden}
     <h1>Vijaysreeram<span class="amp">&amp;</span>Suganthini</h1>
     <div class="sub">Our Wedding Invitation</div>
     <div class="three">Two hearts &nbsp;&middot;&nbsp; One journey &nbsp;&middot;&nbsp; Forever</div>
-    <a class="enter rippleable" href="#dates">Enter <span class="heart">&#10084;</span></a>
+    <a class="enter rippleable" href="#surprise">Enter <span class="heart">&#10084;</span></a>
   </div>
 </header>
 
-<!-- ============ 2. SAVE THE DATES ============ -->
-<section class="cream" id="dates">
+<!-- ============ 2. A LITTLE SURPRISE ============ -->
+<section class="cream" id="surprise">
+  <svg class="flora tr" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
+  <svg class="flora bl" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
+  <div class="wrap">
+    <h2 class="title rv">A Little Surprise&hellip;</h2>
+    <p class="subtitle rv d1">Rub the gold to reveal our dates</p>
+    <svg class="arrow rv d1" viewBox="0 0 48 30" fill="none" stroke="currentColor" stroke-width="1.6"
+         stroke-linecap="round"><path d="M4 4c14 1 24 8 30 20"/><path d="M28 24l6 2 2-6"/></svg>
+    <div class="seal-wrap rv d2" id="scratch">
+      <div class="seal-under">
+        <div>
+          <div class="du">14 &amp; 15<br>November 2026</div>
+          <div class="dl">Kurunjeri</div>
+        </div>
+      </div>
+      <canvas id="scratch-canvas" role="img"
+        aria-label="Scratch to reveal the wedding dates: 14 and 15 November 2026"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. SAVE THE DATES ============ -->
+<section class="blushbg" id="dates">
   <svg class="flora tl" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
   <svg class="flora br" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
   <div class="wrap">
@@ -381,28 +403,6 @@ body.entering{overflow:hidden}
     </div>
     <p class="note-sc rv d3">Your presence makes<br>our celebration more special</p>
     <div class="heart rv d3" style="margin-top:.4rem">&#10084;</div>
-  </div>
-</section>
-
-<!-- ============ 3. A LITTLE SURPRISE ============ -->
-<section class="blushbg" id="surprise">
-  <svg class="flora tr" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
-  <svg class="flora bl" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
-  <div class="wrap">
-    <h2 class="title rv">A Little Surprise&hellip;</h2>
-    <p class="subtitle rv d1">Rub the gold to reveal our dates</p>
-    <svg class="arrow rv d1" viewBox="0 0 48 30" fill="none" stroke="currentColor" stroke-width="1.6"
-         stroke-linecap="round"><path d="M4 4c14 1 24 8 30 20"/><path d="M28 24l6 2 2-6"/></svg>
-    <div class="seal-wrap rv d2" id="scratch">
-      <div class="seal-under">
-        <div>
-          <div class="du">14 &amp; 15<br>November 2026</div>
-          <div class="dl">Kurunjeri</div>
-        </div>
-      </div>
-      <canvas id="scratch-canvas" role="img"
-        aria-label="Scratch to reveal the wedding dates: 14 and 15 November 2026"></canvas>
-    </div>
   </div>
 </section>
 
@@ -644,7 +644,7 @@ like.addEventListener('click',function(){
 /* ---------- entering ---------- */
 (function(){
   var enter=document.querySelector('.enter'), cover=document.getElementById('cover'),
-      flash=document.getElementById('veilflash'), target=document.getElementById('dates');
+      flash=document.getElementById('veilflash'), target=document.getElementById('surprise');
   if(!enter) return;
   enter.addEventListener('click',function(ev){
     ev.preventDefault();
