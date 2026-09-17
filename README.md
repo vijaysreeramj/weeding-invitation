@@ -10,9 +10,9 @@ A single-page animated wedding invitation.
 
 ```
 site/
-  index.html              maroon & gold version — no build step
-  v2/index.html           blush watercolour version (12 scrolling panels)
-  v2/img/                 bloom / sky / vine backdrops for the blush version
+  index.html              the invitation — blush watercolour, no build step
+  v1/index.html           earlier maroon & gold version, kept for reference
+  img/                    photos, backdrops and the VS monogram
   img/hero1..3.jpg        the three hero photos that slide horizontally
   img/vs-logo.png         V&S monogram, dark gold (light backgrounds)
   img/vs-logo-light.png   V&S monogram, pale gold (dark backgrounds)
@@ -26,27 +26,26 @@ vercel.json               serves site/ with long cache headers on img/
 python3 -m http.server 8777 --directory site
 ```
 
-Then open http://localhost:8777/ for the maroon version (add `#open` to skip the
-envelope) or http://localhost:8777/v2/ for the blush watercolour version.
+Then open http://localhost:8777/. Add `#open` to skip the envelope. The earlier
+maroon version is at http://localhost:8777/v1/.
 
 ## Deploying
 
-Hosted on Vercel. Import this repo at https://vercel.com/new — `vercel.json`
-already sets `outputDirectory` to `site`, so there is nothing to configure and
-no build step to run. Every push to `main` redeploys.
+Live at **https://vijaysreeram-weds-suganthini.vercel.app**
+
+Hosted on Vercel from this repo — `vercel.json` sets `outputDirectory` to
+`site`, so there is nothing to configure and no build step to run. Every push
+to `main` redeploys.
 
 If Vercel does not pick up `vercel.json`, set **Root Directory** to `site` in
 Project Settings instead.
 
 ## Still to do
 
-- **Photos.** The three hero images are Creative Commons placeholders from
-  Wikimedia Commons, but the footer credits the DevCutz team. Replace them with
-  DevCutz's own photos so the credit is accurate.
-- **Our Moments.** The gallery section is commented out in `index.html`. Drop two
-  photos in as `img/photo1.jpg` and `img/photo2.jpg`, then remove the comment
-  markers around that block. In `v2/`, swap the `.pola i` and `.mem i` blocks for
-  real `<img>` tags — both are marked with a comment.
+- **Photos.** `bloom.jpg` and `sky.jpg` are Creative Commons images from
+  Wikimedia Commons. Swap them for your own when you have them.
+- **Watermarks.** Photos 4 and 5 (Ceremonies, Venue) carry another
+  photographer's watermark. Replace them with your own before sharing.
 - **Shared album.** The "Add Your Photos" button points at a placeholder
   `photos.google.com` link — swap in the real shared-album URL.
 - **Wishes & song requests.** These currently save to each visitor's own browser
