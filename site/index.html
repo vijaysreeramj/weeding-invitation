@@ -46,7 +46,14 @@ h1,h2,h3{font-weight:400;margin:0}
 .label{font-family:var(--sans);font-weight:500;letter-spacing:.34em;text-transform:uppercase;
   font-size:.64rem;color:var(--rose-dp)}
 .wrap{width:min(680px,88vw);margin-inline:auto;position:relative;z-index:2}
-.heart{color:var(--rose);font-size:.8em}
+.heart{display:inline-block;width:.95em;height:.87em;vertical-align:-.1em;
+  fill:var(--rose);color:var(--rose)}
+.hb .heart,.cer .heart{width:14px;height:13px}
+.heart.big{width:20px;height:18px}
+#likeBtn svg{width:17px;height:16px;fill:none;stroke:currentColor;stroke-width:1.9;
+  stroke-linejoin:round;transition:fill .25s}
+#likeBtn.on svg{fill:currentColor}
+.spark svg{width:15px;height:14px;fill:var(--rose)}
 
 /* ============ watercolour floral corners ============ */
 .flora{position:absolute;width:clamp(120px,22vw,230px);pointer-events:none;z-index:2;opacity:.92}
@@ -449,7 +456,7 @@ body.entering{overflow:hidden}
   <button id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="right">
     <button id="musicBtn" aria-label="Music">&#9834;</button>
-    <button id="likeBtn" aria-label="Love this">&#9825;</button>
+    <button id="likeBtn" aria-label="Love this"><svg aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg></button>
   </div>
 </div>
 
@@ -471,11 +478,11 @@ body.entering{overflow:hidden}
   <div class="mid">
     <img class="crest" src="img/vs-logo-light.png" alt="V &amp; S monogram">
     <div class="label">Together Forever</div>
-    <div class="heart" style="font-size:1rem;margin-top:.5rem">&#10084;</div>
+    <svg class="heart big" aria-hidden="true" viewBox="0 0 24 22" style="margin:.5rem auto 0"><use href="#hrt"/></svg>
     <h1>Vijaysreeram<span class="amp">&amp;</span>Suganthini</h1>
     <div class="sub">Our Wedding Invitation</div>
     <div class="three">Two hearts &nbsp;&middot;&nbsp; One journey &nbsp;&middot;&nbsp; Forever</div>
-    <a class="enter rippleable" href="#surprise">Enter <span class="heart">&#10084;</span></a>
+    <a class="enter rippleable" href="#surprise">Enter <svg class="heart" aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg></a>
   </div>
 </header>
 
@@ -531,7 +538,7 @@ body.entering{overflow:hidden}
       <div class="cdcell"><b id="c-s">--</b><span>Seconds</span></div>
     </div>
     <p class="subtitle rv d2">Until our forever</p>
-    <div class="heart rv d2">&#10084;</div>
+    <div class="rv d2"><svg class="heart big" aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg></div>
   </div>
 </section>
 
@@ -550,7 +557,7 @@ body.entering{overflow:hidden}
         <h3>Reception</h3>
         <div class="dt">14 Nov 2026</div>
         <div class="tm">6:00 PM onwards</div>
-        <div class="hb">&#10084;</div>
+        <div class="hb"><svg class="heart" aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg></div>
         <a class="btn rippleable" style="margin-top:.8rem" target="_blank" rel="noopener"
            href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Vijaysreeram+%26+Suganthini+-+Reception&amp;dates=20261114T180000/20261114T220000&amp;ctz=Asia/Kolkata&amp;location=Sri+Rudhram+Mahal,+Pethappampati+Rd,+Kurunjeri,+Tamil+Nadu+642154">Add to Calendar</a>
       </div>
@@ -559,7 +566,7 @@ body.entering{overflow:hidden}
         <h3>Muhurtham</h3>
         <div class="dt">15 Nov 2026</div>
         <div class="tm">6:00 AM &ndash; 7:00 AM</div>
-        <div class="hb">&#10084;</div>
+        <div class="hb"><svg class="heart" aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg></div>
         <a class="btn rippleable" style="margin-top:.8rem" target="_blank" rel="noopener"
            href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Vijaysreeram+%26+Suganthini+-+Muhurtham&amp;dates=20261115T060000/20261115T070000&amp;ctz=Asia/Kolkata&amp;location=Sri+Rudhram+Mahal,+Pethappampati+Rd,+Kurunjeri,+Tamil+Nadu+642154">Add to Calendar</a>
       </div>
@@ -668,7 +675,7 @@ body.entering{overflow:hidden}
       <p>We, the families of<br><span class="nm">Vijaysreeram and Suganthini</span>,<br>
          are delighted to invite you to be a part of our wedding celebrations.</p>
       <p>Your blessings, love and presence mean the world to us.</p>
-      <div class="heart">&#10084;</div>
+      <svg class="heart big" aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg>
       <p class="sign">With love,<br>Both Families</p>
     </div>
   </div>
@@ -706,7 +713,7 @@ body.entering{overflow:hidden}
       <p>Kurunjeri</p>
     </div>
     <p class="note-sc rv d3">Your presence makes<br>our celebration more special</p>
-    <div class="heart rv d3" style="margin-top:.4rem">&#10084;</div>
+    <div class="rv d3" style="margin-top:.4rem"><svg class="heart big" aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg></div>
   </div>
 </section>
 
@@ -738,7 +745,7 @@ body.entering{overflow:hidden}
   <div class="wrap">
     <img class="crest-sm" src="img/vs-logo-light.png" alt="">
     <p class="tag rv">#VijaysreeramWedsSuganthini</p>
-    <p class="ty rv d1">Thank you for being a part of<br>our forever <span class="heart">&#10084;</span></p>
+    <p class="ty rv d1">Thank you for being a part of<br>our forever <svg class="heart" aria-hidden="true" viewBox="0 0 24 22" style="fill:#ffd9d6"><use href="#hrt"/></svg></p>
     <div class="socials rv d2">
       <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
         stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/>
@@ -790,6 +797,11 @@ body.entering{overflow:hidden}
         <circle cx="120" cy="60" r="2.6"/><circle cx="132" cy="76" r="2"/>
         <circle cx="90" cy="120" r="2.2"/><circle cx="60" cy="150" r="2"/>
       </g>
+    </symbol>
+
+    <!-- heart -->
+    <symbol id="hrt" viewBox="0 0 24 22">
+      <path d="M12 21.2S1.6 14.6 1.6 7.7A5.7 5.7 0 0 1 12 4.4 5.7 5.7 0 0 1 22.4 7.7c0 6.9-10.4 13.5-10.4 13.5z"/>
     </symbol>
 
     <!-- small gold ornament -->
@@ -856,10 +868,9 @@ nav.addEventListener('click',function(e){
 
 /* ---------- like ---------- */
 var like=document.getElementById('likeBtn');
-try{ if(localStorage.getItem('vs_like')==='1'){like.classList.add('on');like.innerHTML='&#10084;';} }catch(e){}
+try{ if(localStorage.getItem('vs_like')==='1'){ like.classList.add('on'); } }catch(e){}
 like.addEventListener('click',function(){
   var on=like.classList.toggle('on');
-  like.innerHTML=on?'&#10084;':'&#9825;';
   try{ localStorage.setItem('vs_like',on?'1':'0'); }catch(e){}
   if(on) burstHearts();
 });
@@ -902,7 +913,8 @@ document.addEventListener('click',function(e){
   }
   if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var sp=document.createElement('span');
-  sp.className='spark'; sp.innerHTML='&#10084;';
+  sp.className='spark';
+  sp.innerHTML='<svg viewBox="0 0 24 22"><use href="#hrt"/></svg>';
   sp.style.left=e.clientX+'px'; sp.style.top=e.clientY+'px';
   document.body.appendChild(sp);
   setTimeout(function(){ sp.remove(); },950);
@@ -923,7 +935,8 @@ function tick(){
   var diff=TARGET-Date.now();
   if(diff<=0){
     document.getElementById('cd').innerHTML=
-      '<div class="cdcell"><b style="font-size:1.6rem">Just Married</b><span>&#10084;</span></div>';
+      '<div class="cdcell"><b style="font-size:1.6rem">Just Married</b>'
+      +'<span><svg class="heart" viewBox="0 0 24 22" style="fill:#ffd9d6"><use href="#hrt"/></svg></span></div>';
     clearInterval(timer); return;
   }
   cD.textContent=Math.floor(diff/864e5);
