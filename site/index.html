@@ -308,7 +308,7 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
 
 .cam{width:34px;height:30px;margin:.9rem auto 0;display:block;color:var(--rose-dp)}
 .album{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap;margin-top:1.6rem}
-.slot{width:clamp(74px,19vw,104px);background:rgba(255,255,255,.65);padding:6px 6px 20px;
+.slot{width:clamp(84px,22vw,116px);background:rgba(255,255,255,.65);padding:6px 6px 20px;
   border-radius:3px;box-shadow:0 8px 20px -14px rgba(120,60,70,.5);
   animation:tilt 7s ease-in-out infinite}
 .slot i{display:block;aspect-ratio:1;border:1.4px dashed rgba(201,132,140,.55);border-radius:2px;
@@ -771,21 +771,35 @@ body.entering{overflow:hidden}
 
 <!-- ============ OUR ALBUM ============ -->
 <section class="blushbg" id="album">
+  <div class="photobg" style="background-image:url(img/p8.jpg)"></div>
+  <div class="photowash blush"></div>
   <svg class="flora tl" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
   <svg class="flora br" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
   <div class="wrap">
     <h2 class="title rv">Our Album</h2>
-    <p class="subtitle rv d1">Ours and yours, in one place</p>
+    <p class="subtitle rv d1">Ours and yours, all in one place
+      <svg class="pk sm" aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg></p>
     <svg class="cam rv d1" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="1.4"
          stroke-linejoin="round"><path d="M2 6h4l2-3h8l2 3h4v13H2z"/><circle cx="12" cy="12" r="4.2"/></svg>
 
     <p class="lead rv d2" style="margin-top:1.2rem">
-      The photographer will catch one wedding. You will see another one entirely &mdash;
-      the laughing, the in-between moments, the ones nobody was posing for.
-      Add yours, and the album becomes all of ours.
+      The photographer will capture the pretty pictures.<br>
+      You&rsquo;ll capture the chaos. <span class="emo">&#128514;</span>
     </p>
+    <p class="lead rv d2" style="margin-top:1rem">
+      The stolen laughs, silly selfies, happy tears, dance-floor madness,
+      the little moments in between &mdash; the ones we might miss while living the day.
+    </p>
+    <p class="lead rv d3" style="margin-top:1rem">
+      So click, upload and make a little space in our forever.
+    </p>
+    <p class="lead rv d3" style="margin-top:1rem">
+      Because the best wedding album is the one filled with memories
+      from everyone who was there.
+      <svg class="pk sm" aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg>
+    </p>
+
     <div class="album rv d3">
-      <div class="slot"><i>+</i></div>
       <div class="slot"><i>+</i></div>
       <div class="slot"><i>+</i></div>
       <div class="slot"><i>+</i></div>
@@ -802,6 +816,8 @@ body.entering{overflow:hidden}
 
 <!-- ============ 10. WISHES WALL ============ -->
 <section class="cream" id="wishes">
+  <div class="photobg" style="background-image:url(img/p9.jpg)"></div>
+  <div class="photowash"></div>
   <svg class="flora bl" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
   <div class="wrap">
     <h2 class="title rv">Wishes Wall</h2>
