@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/p7.jpg">
 <link rel="icon" type="image/png" href="img/vs-icon.png">
 <style>
@@ -37,7 +37,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:var(--serif);background:var(--paper);color:var(--ink);
-  font-size:18px;font-weight:600;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  font-size:18px;font-weight:700;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
   font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1,'onum' 0}
 img{max-width:100%;display:block}
 a{color:inherit}
@@ -46,6 +46,11 @@ h1,h2,h3{font-weight:400;margin:0}
 .label{font-family:var(--sans);font-weight:500;letter-spacing:.34em;text-transform:uppercase;
   font-size:.64rem;color:var(--rose-dp)}
 .wrap{width:min(680px,88vw);margin-inline:auto;position:relative;z-index:2}
+#story .wrap,#ceremonies .wrap,#dates .wrap,#album .wrap,#capsule .wrap,#withlove .wrap,
+#venue .wrap{text-shadow:0 1px 0 rgba(253,243,240,.85),0 0 7px rgba(253,243,240,.8)}
+#story .wrap .subtitle,#ceremonies .wrap .subtitle,#album .wrap .subtitle,
+#capsule .wrap .subtitle{text-shadow:0 1px 0 rgba(253,243,240,.9),0 0 9px rgba(253,243,240,.85)}
+.card,.lovecard,.cer,.sealcard,.prompts span,.slot{text-shadow:none}
 .heart{display:inline-block;width:.95em;height:.87em;vertical-align:-.1em;
   fill:var(--rose);color:var(--rose)}
 .hb .heart,.cer .heart{width:14px;height:13px}
@@ -231,12 +236,12 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
 .evcol .ic{width:22px;height:22px;margin:0 auto;color:var(--rose-dp)}
 .evcol b{display:block;font-family:var(--sans);font-weight:500;letter-spacing:.2em;font-size:.68rem;
   text-transform:uppercase;color:var(--deep);margin:.45rem 0 .25rem}
-.evcol span{font-size:.95rem;font-weight:600;color:var(--ink-2)}
+.evcol span{font-size:.95rem;font-weight:700;color:var(--ink-2)}
 .place{margin-top:1.8rem}
 .place .pin{width:22px;height:22px;margin:0 auto;color:var(--rose-dp)}
-.place h3{font-family:var(--serif);font-weight:600;font-size:1.3rem;color:var(--deep);margin-top:.2rem}
+.place h3{font-family:var(--serif);font-weight:700;font-size:1.3rem;color:var(--deep);margin-top:.2rem}
 .place p{color:var(--ink-2);font-size:1rem}
-.bring{max-width:36ch;margin:1.7rem auto 0;font-style:italic;font-size:1.02rem;
+.bring{max-width:36ch;margin:1.7rem auto 0;font-style:italic;font-weight:600;font-size:1.02rem;
   color:var(--ink-2);line-height:1.75}
 .closing .bring{color:#fdeee9;text-shadow:0 2px 12px rgba(80,32,42,.85);margin-top:1.4rem}
 .note-sc{font-family:var(--script);font-size:1.25rem;color:var(--rose-dp);margin-top:1.6rem}
@@ -258,7 +263,7 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
 
 /* our story */
 .story{margin-top:1.6rem;max-width:34rem;margin-inline:auto;text-align:center}
-.story p{font-size:1.06rem;font-weight:600;color:var(--ink-2);margin-bottom:1rem}
+.story p{font-size:1.06rem;font-weight:700;color:var(--ink-2);margin-bottom:1rem}
 .story .sign{font-family:var(--script);font-size:1.45rem;color:var(--rose-dp);margin-top:1.2rem}
 
 /* countdown */
@@ -284,9 +289,9 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
 .cer .gop{width:clamp(52px,11vw,74px);margin:0 auto .6rem;display:block;color:var(--rose-dp)}
 .cer h3{font-family:var(--sans);font-weight:500;letter-spacing:.2em;text-transform:uppercase;
   font-size:.72rem;color:var(--deep)}
-.cer .dt{font-family:var(--serif);font-weight:600;font-size:1.05rem;color:var(--ink);margin-top:.5rem;
+.cer .dt{font-family:var(--serif);font-weight:700;font-size:1.05rem;color:var(--ink);margin-top:.5rem;
   font-variant-numeric:lining-nums}
-.cer .tm{font-size:.95rem;font-weight:600;color:var(--ink-2)}
+.cer .tm{font-size:.95rem;font-weight:700;color:var(--ink-2)}
 .cer .hb{color:var(--rose);font-size:.8rem;margin-top:.5rem}
 
 /* venue */
@@ -298,8 +303,8 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
 .venuecard{position:relative;z-index:3;margin-inline:auto;width:100%;max-width:600px;text-align:center}
 .venuecard .pin{width:24px;height:24px;margin:0 auto;color:var(--rose-dp)}
 .venuecard .label{margin-top:.2rem}
-.venuecard h3{font-family:var(--serif);font-weight:600;font-size:clamp(1.3rem,4vw,1.7rem);color:var(--deep);margin-top:.4rem}
-.venuecard p{color:var(--ink-2);font-weight:600}
+.venuecard h3{font-family:var(--serif);font-weight:700;font-size:clamp(1.3rem,4vw,1.7rem);color:var(--deep);margin-top:.4rem}
+.venuecard p{color:var(--ink-2);font-weight:700}
 .btn{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.1rem;background:transparent;
   border:1px solid var(--rose-dp);color:var(--ink);font-family:var(--sans);font-weight:500;font-size:.66rem;
   letter-spacing:.2em;text-transform:uppercase;padding:.75rem 1.6rem;border-radius:999px;
@@ -363,12 +368,12 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
   box-shadow:0 20px 44px -28px rgba(120,60,70,.55)}
 .lovecard::after{content:"";position:absolute;inset:7px;border:1px solid rgba(201,168,106,.45);
   pointer-events:none;border-radius:2px}
-.lovecard p{font-size:1.06rem;font-weight:600;color:var(--ink);margin-bottom:.9rem}
+.lovecard p{font-size:1.06rem;font-weight:700;color:var(--ink);margin-bottom:.9rem}
 .lovecard .nm{color:var(--deep)}
 .lovecard .fromline{font-family:var(--sans);font-weight:500;letter-spacing:.3em;
   text-transform:uppercase;font-size:.6rem;color:var(--rose-dp);margin:1.5rem 0 .9rem}
 .famrow{display:grid;grid-template-columns:1fr;gap:.75rem;justify-items:center}
-.fam b{display:block;font-family:var(--serif);font-weight:600;font-size:clamp(.95rem,2.7vw,1.06rem);
+.fam b{display:block;font-family:var(--serif);font-weight:700;font-size:clamp(.95rem,2.7vw,1.06rem);
   color:var(--deep);line-height:1.5}
 .fam span{display:block;font-family:var(--sans);font-weight:500;letter-spacing:.22em;
   text-transform:uppercase;font-size:.54rem;color:var(--rose-dp);margin-top:.3rem}
@@ -844,7 +849,7 @@ body.entering{overflow:hidden}
 
 <!-- ============ THE TIME CAPSULE ============ -->
 <section class="cream" id="capsule">
-  <div class="photobg" style="background-image:url(img/p11.jpg)"></div>
+  <div class="photobg" style="background-image:url(img/p11.jpg);background-position:center 18%"></div>
   <div class="photowash"></div>
   <svg class="flora bl" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
   <div class="wrap">
