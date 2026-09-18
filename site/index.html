@@ -1198,74 +1198,125 @@ tick(); var timer=setInterval(tick,1000);
 })();
 
 /* ---------- the time capsule ----------
-   Sealed notes live in this browser until OPEN_DATE, then unseal by themselves.
-   To collect them centrally, POST the same fields to a form service from
-   inside the submit handler below. -------------------------------------- */
+   Notes are saved to a private Google Sheet through an Apps Script web app.
+   The script only returns the note text from 15 Nov 2036, so the seal is
+   enforced on the server, not here. -------------------------------------- */
+var CAPSULE_URL='https://script.google.com/macros/s/AKfycbyh1_AXaKBT5-TMqx9KqDBTiKcT6PubiiBlI1OIfvw1KAMSs8LZODGfsWQi7reL2rBF/exec';
 var OPEN_DATE=new Date('2036-11-15T06:00:00+05:30').getTime();
-function load(k){ try{ return JSON.parse(localStorage.getItem(k)||'[]'); }catch(e){ return []; } }
-function save(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} }
 
 (function(){
   var form=document.getElementById('cap-form'), list=document.getElementById('caplist'),
       empty=document.getElementById('cap-empty'), note=document.getElementById('cap-status'),
       cdText=document.getElementById('cap-countdown');
   if(!form) return;
-  var notes=load('vs2_capsule');
-  var unsealed=Date.now()>=OPEN_DATE;
+  var opened=Date.now()>=OPEN_DATE;
 
-  function bars(text){
+  function pending(v){
+    try{
+      if(v===undefined) return JSON.parse(localStorage.getItem('vs2_pending')||'[]');
+      localStorage.setItem('vs2_pending',JSON.stringify(v));
+    }catch(e){ return []; }
+  }
+  function bars(n){
     var wrap=document.createElement('div'); wrap.className='redact';
-    var lines=Math.max(2,Math.min(6,Math.ceil(text.length/42)));
-    for(var i=0;i<lines;i++){
+    for(var i=0;i<n;i++){
       var b=document.createElement('i');
-      b.style.width=(i===lines-1? 35+Math.random()*30 : 78+Math.random()*22)+'%';
+      b.style.width=(i===n-1? 35+Math.random()*30 : 78+Math.random()*22)+'%';
       wrap.appendChild(b);
     }
     return wrap;
   }
-  function card(n,t,when,fresh){
+  function stamp(d){
+    var t=new Date(d);
+    return isNaN(t)? '' : t.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});
+  }
+  function card(n,when,text,fresh){
     var d=document.createElement('div'); d.className='sealcard'+(fresh?' fresh':'');
     var seal=document.createElement('span'); seal.className='waxdot';
     seal.innerHTML='<svg viewBox="0 0 24 22"><use href="#hrt"/></svg>';
     var body=document.createElement('div'); body.className='sealbody';
-    if(unsealed){
-      var p=document.createElement('p'); p.className='sealtext'; p.textContent='\u201C'+t+'\u201D';
+    if(text){
+      var p=document.createElement('p'); p.className='sealtext'; p.textContent='“'+text+'”';
       body.appendChild(p);
     } else {
-      body.appendChild(bars(t));
+      body.appendChild(bars(2+Math.floor(Math.random()*2)));
     }
     var who=document.createElement('small');
-    who.textContent='\u2014 '+n+(when? ' \u00B7 sealed '+when : '');
+    who.textContent='— '+n+(when? ' · sealed '+when : '');
     body.appendChild(who);
     d.appendChild(seal); d.appendChild(body);
     return d;
   }
-  function stamp(d){ return new Date(d).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}); }
 
-  notes.forEach(function(w){ list.appendChild(card(w[0],w[1],w[2]?stamp(w[2]):'',false)); });
-  if(notes.length) empty.style.display='none';
+  /* Apps Script sends no CORS headers, so the list comes back as JSONP */
+  function loadSealed(){
+    var fn='__cap'+Math.random().toString(36).slice(2);
+    var sc=document.createElement('script');
+    var done=false;
+    window[fn]=function(data){
+      done=true;
+      try{ delete window[fn]; }catch(e){ window[fn]=undefined; }
+      sc.remove();
+      if(!data||!data.ok||!data.notes) return;
+      list.innerHTML='';
+      data.notes.forEach(function(x){
+        list.appendChild(card(x.name, stamp(x.when), x.note||'', false));
+      });
+      if(data.notes.length) empty.style.display='none';
+    };
+    sc.onerror=function(){ sc.remove(); };
+    sc.src=CAPSULE_URL+'?callback='+fn+'&t='+Date.now();
+    document.head.appendChild(sc);
+    setTimeout(function(){ if(!done) sc.remove(); },15000);
+  }
+
+  function send(payload){
+    return fetch(CAPSULE_URL,{
+      method:'POST',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body:JSON.stringify(payload)
+    });
+  }
+  function flush(){
+    var q=pending();
+    if(!q.length) return;
+    pending([]);
+    q.forEach(function(item){ send(item).catch(function(){
+      var left=pending(); left.push(item); pending(left);
+    }); });
+  }
 
   form.addEventListener('submit',function(ev){
     ev.preventDefault();
     if(form._hp.value) return;
     var n=form.name.value.trim(), t=form.note.value.trim();
     if(!n||!t) return;
-    var ts=Date.now();
-    list.insertBefore(card(n,t,stamp(ts),true), list.firstChild);
+    var btn=form.querySelector('.send');
+    btn.disabled=true;
+    note.textContent='Sealing…';
+
+    list.insertBefore(card(n, stamp(Date.now()), opened? t : '', true), list.firstChild);
     empty.style.display='none';
-    notes.unshift([n,t,ts]); save('vs2_capsule',notes);
-    note.textContent = unsealed ? 'Added to the capsule.' : 'Sealed. See you on 15 November 2036.';
     if(window.burstHearts) window.burstHearts();
-    form.reset();
+
+    send({name:n,note:t,hp:''}).then(function(){
+      note.textContent = opened ? 'Added to the capsule.' : 'Sealed. See you on 15 November 2036.';
+    }).catch(function(){
+      var q=pending(); q.push({name:n,note:t,hp:''}); pending(q);
+      note.textContent='Sealed. It will send as soon as you are back online.';
+    }).then(function(){
+      btn.disabled=false; form.reset();
+    });
   });
 
   function tickCapsule(){
     var diff=OPEN_DATE-Date.now();
     if(diff<=0){ cdText.textContent='The capsule is open.'; return; }
     var d=Math.floor(diff/864e5);
-    cdText.textContent='Opens in '+d.toLocaleString('en-GB')+' days \u00B7 15 November 2036';
+    cdText.textContent='Opens in '+d.toLocaleString('en-GB')+' days · 15 November 2036';
   }
   tickCapsule(); setInterval(tickCapsule,60000);
+  flush(); loadSealed();
 })();
 
 /* ---------- drifting petals ---------- */

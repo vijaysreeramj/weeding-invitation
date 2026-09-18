@@ -14,6 +14,10 @@
 
 var SHEET_NAME = 'Notes';
 
+/** The capsule opens on the tenth anniversary. Enforced here, on the server,
+ *  so the note text is never sent to a browser before this moment. */
+var OPEN_DATE = new Date('2036-11-15T06:00:00+05:30');
+
 /** A guest seals a note. */
 function doPost(e) {
   try {
@@ -32,22 +36,26 @@ function doPost(e) {
 }
 
 /**
- * The page asks who has sealed a note — names and dates only, never the text,
- * so the capsule stays sealed even if someone pokes at this URL.
+ * The page asks what is in the capsule.
+ * Before OPEN_DATE: names and dates only — the text never leaves the Sheet.
+ * From OPEN_DATE:   the notes themselves.
  * Served as JSONP because Apps Script does not send CORS headers.
  */
 function doGet(e) {
   var cb = (e && e.parameter && e.parameter.callback) || '';
   var payload;
   try {
+    var open = new Date() >= OPEN_DATE;
     var sh = sheet(), last = sh.getLastRow(), list = [];
     if (last > 1) {
-      var rows = sh.getRange(2, 1, last - 1, 2).getValues();
+      var rows = sh.getRange(2, 1, last - 1, 3).getValues();
       for (var i = rows.length - 1; i >= 0; i--) {
-        list.push({ when: String(rows[i][0]), name: String(rows[i][1]) });
+        var item = { when: String(rows[i][0]), name: String(rows[i][1]) };
+        if (open) item.note = String(rows[i][2]);
+        list.push(item);
       }
     }
-    payload = { ok: true, notes: list };
+    payload = { ok: true, open: open, notes: list };
   } catch (err) {
     payload = { ok: false, error: String(err) };
   }
