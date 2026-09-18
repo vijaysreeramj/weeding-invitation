@@ -360,7 +360,20 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
   pointer-events:none;border-radius:2px}
 .lovecard p{font-size:1.06rem;font-weight:500;color:var(--ink);margin-bottom:.9rem}
 .lovecard .nm{color:var(--deep)}
-.lovecard .sign{font-family:var(--script);font-size:1.3rem;color:var(--rose-dp);margin-top:1.2rem}
+.lovecard .fromline{font-family:var(--sans);font-weight:500;letter-spacing:.3em;
+  text-transform:uppercase;font-size:.6rem;color:var(--rose-dp);margin:1.5rem 0 .9rem}
+.famrow{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(.5rem,2.5vw,1.4rem);
+  align-items:center}
+.fam b{display:block;font-family:var(--serif);font-weight:600;font-size:clamp(.95rem,2.7vw,1.06rem);
+  color:var(--deep);line-height:1.5}
+.fam span{display:block;font-family:var(--sans);font-weight:500;letter-spacing:.22em;
+  text-transform:uppercase;font-size:.54rem;color:var(--rose-dp);margin-top:.3rem}
+.famamp{font-family:var(--script);font-size:1.5rem;color:var(--rose)}
+.lovecard .sign{font-family:var(--script);font-size:1.25rem;color:var(--rose-dp);margin-top:1.6rem;
+  line-height:1.5}
+@media (max-width:560px){
+  .famrow{grid-template-columns:1fr;gap:1rem}
+}
 
 /* forms */
 .card{background:var(--white);border:1px solid rgba(229,169,173,.5);border-radius:16px;
@@ -543,8 +556,10 @@ body.entering{overflow:hidden}
       <div class="txt rv d2">
         <p>What started as a simple conversation turned into countless conversations,
            endless laughter and a love that just felt&hellip; right.</p>
-        <p>Through every phase, we found our favourite place in each other. And now,
-           we're so excited to begin this beautiful chapter &mdash; for real, together.</p>
+        <p>Somewhere along the way, you became my favourite person, my safest place
+           and the one I want beside me through every little adventure life brings.
+           And now, after all the memories we&rsquo;ve made, we&rsquo;re ready to make
+           the biggest one yet &mdash; becoming a family.</p>
         <p class="sign">Vijaysreeram &amp; Suganthini</p>
       </div>
     </div>
@@ -697,11 +712,26 @@ body.entering{overflow:hidden}
     <h2 class="title rv">With Love</h2>
     <svg class="orn rv" viewBox="0 0 86 14"><use href="#orn"/></svg>
     <div class="lovecard rv d1">
-      <p>We, the families of<br><span class="nm">Vijaysreeram and Suganthini</span>,<br>
-         are delighted to invite you to be a part of our wedding celebrations.</p>
-      <p>Your blessings, love and presence mean the world to us.</p>
-      <svg class="heart big" aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg>
-      <p class="sign">With love,<br>Both Families</p>
+      <p>With hearts full of happiness,<br>
+         our families invite you to celebrate the beginning of<br>
+         <span class="nm">Vijaysreeram &amp; Suganthini&rsquo;s</span> forever.</p>
+      <p>Your presence, blessings and love<br>
+         will make these moments even more special.</p>
+      <p class="fromline">With love from</p>
+      <div class="famrow">
+        <div class="fam">
+          <b>Krishnakishor &middot; Renuka &middot; Dharanees</b>
+          <span>Bride&rsquo;s Family</span>
+        </div>
+        <div class="famamp">&amp;</div>
+        <div class="fam">
+          <b>Jayakumar &middot; Sasikala &middot; Nilesh</b>
+          <span>Groom&rsquo;s Family</span>
+        </div>
+      </div>
+      <p class="sign">Together with our families,<br>
+        we look forward to celebrating with you.
+        <svg class="heart" aria-hidden="true" viewBox="0 0 24 22" style="fill:#fbe4e0"><use href="#hrt"/></svg></p>
     </div>
   </div>
 </section>
