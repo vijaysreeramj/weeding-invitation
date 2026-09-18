@@ -576,7 +576,7 @@ body.entering{overflow:hidden}
     <p class="subtitle rv d1">From chance to forever&hellip;</p>
     <div class="story">
       <div class="txt rv d2">
-        <p>What started as a simple conversation turned into countless conversations,
+        <p>What started as one simple conversation turned into countless more,
            endless laughter and a love that just felt&hellip; right.</p>
         <p>Somewhere along the way, you became my favourite person, my safest place
            and the one I want beside me through every little adventure life brings.
@@ -813,7 +813,7 @@ body.entering{overflow:hidden}
     </p>
     <p class="lead rv d2" style="margin-top:1rem">
       The stolen laughs, silly selfies, happy tears, dance-floor madness,
-      the little moments in between &mdash; the ones we might miss while living the day.
+      the little moments in between &mdash; the ones we might miss while we&rsquo;re busy living it.
     </p>
     <p class="lead rv d3" style="margin-top:1rem">
       So click, upload and make a little space in our forever.
@@ -846,7 +846,7 @@ body.entering{overflow:hidden}
   <svg class="flora bl" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
   <div class="wrap">
     <h2 class="title rv">The Time Capsule</h2>
-    <p class="subtitle rv d1">Sealed until our first anniversary</p>
+    <p class="subtitle rv d1">Sealed for the next ten years</p>
 
     <svg class="capseal rv d1" viewBox="0 0 64 64" aria-hidden="true">
       <circle cx="32" cy="32" r="26" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".55"/>
@@ -857,19 +857,19 @@ body.entering{overflow:hidden}
 
     <p class="lead rv d2" style="margin-top:1rem">
       Write us something we cannot read yet &mdash; a memory, a piece of advice,
-      a wish, or a wild guess about where we&rsquo;ll be in a year.
+      a wish, or a wild guess about where we&rsquo;ll be in ten years.
     </p>
     <p class="lead rv d2" style="margin-top:.9rem">
-      Every note seals the moment you send it. Nobody opens a single one
-      &mdash; not even us &mdash; until our first anniversary.
+      Every note seals the moment you send it. Not one of them is opened
+      &mdash; not even by us &mdash; until our tenth anniversary.
     </p>
     <p class="capcd rv d2" id="cap-countdown">&nbsp;</p>
 
     <form class="card rv d3" id="cap-form">
       <label for="c-name" class="label" style="display:block;margin-bottom:.4rem">Your name</label>
       <input type="text" id="c-name" name="name" required autocomplete="name">
-      <label for="c-note" class="label" style="display:block;margin:.9rem 0 .4rem">Your note to the future</label>
-      <textarea id="c-note" name="note" required placeholder="We&rsquo;ll read this in a year&hellip;"></textarea>
+      <label for="c-note" class="label" style="display:block;margin:.9rem 0 .4rem">Your note to the future us</label>
+      <textarea id="c-note" name="note" required placeholder="We&rsquo;ll read this in ten years&hellip;"></textarea>
       <input type="text" name="_hp" tabindex="-1" autocomplete="off"
              style="position:absolute;left:-9999px;opacity:0">
       <button class="send rippleable" type="submit">Seal My Note</button>
@@ -878,7 +878,7 @@ body.entering{overflow:hidden}
 
     <div class="caplist" id="caplist"></div>
     <p class="capempty rv d3" id="cap-empty">The capsule is empty. Be the first to seal something.</p>
-    <p class="note-sc rv d3">See you here on 15 November 2027</p>
+    <p class="note-sc rv d3">See you here on 15 November 2036</p>
   </div>
 </section>
 
@@ -1193,7 +1193,7 @@ tick(); var timer=setInterval(tick,1000);
    Sealed notes live in this browser until OPEN_DATE, then unseal by themselves.
    To collect them centrally, POST the same fields to a form service from
    inside the submit handler below. -------------------------------------- */
-var OPEN_DATE=new Date('2027-11-15T06:00:00+05:30').getTime();
+var OPEN_DATE=new Date('2036-11-15T06:00:00+05:30').getTime();
 function load(k){ try{ return JSON.parse(localStorage.getItem(k)||'[]'); }catch(e){ return []; } }
 function save(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} }
 
@@ -1246,7 +1246,7 @@ function save(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} 
     list.insertBefore(card(n,t,stamp(ts),true), list.firstChild);
     empty.style.display='none';
     notes.unshift([n,t,ts]); save('vs2_capsule',notes);
-    note.textContent = unsealed ? 'Added to the capsule.' : 'Sealed. See you on 15 November 2027.';
+    note.textContent = unsealed ? 'Added to the capsule.' : 'Sealed. See you on 15 November 2036.';
     if(window.burstHearts) window.burstHearts();
     form.reset();
   });
@@ -1255,7 +1255,7 @@ function save(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} 
     var diff=OPEN_DATE-Date.now();
     if(diff<=0){ cdText.textContent='The capsule is open.'; return; }
     var d=Math.floor(diff/864e5);
-    cdText.textContent='Opens in '+d.toLocaleString('en-GB')+' days \u00B7 15 November 2027';
+    cdText.textContent='Opens in '+d.toLocaleString('en-GB')+' days \u00B7 15 November 2036';
   }
   tickCapsule(); setInterval(tickCapsule,60000);
 })();
