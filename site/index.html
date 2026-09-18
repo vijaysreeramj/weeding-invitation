@@ -390,8 +390,10 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
 .wishes-list{margin-top:1.2rem;display:flex;flex-direction:column;gap:.7rem}
 .wish{background:var(--white);border-left:3px solid var(--rose);border-radius:10px;
   padding:.85rem 1.1rem;text-align:left}
-.wish p{font-size:1rem;font-weight:500;color:var(--ink)}
-.wish small{font-family:var(--sans);letter-spacing:.18em;text-transform:uppercase;
+.wish p{font-size:1rem;font-weight:500;color:var(--ink);white-space:pre-wrap;
+  overflow-wrap:break-word;word-break:break-word}
+.wish small{display:block;margin-top:.5rem;font-family:var(--sans);font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;
   font-size:.56rem;color:var(--rose-dp)}
 
 
@@ -824,9 +826,9 @@ body.entering{overflow:hidden}
     <p class="subtitle rv d1">Leave us a little note</p>
     <form class="card rv d2" id="wish-form">
       <label for="w-name" class="label" style="display:block;margin-bottom:.4rem">Your name</label>
-      <input type="text" id="w-name" name="name" maxlength="60" required>
+      <input type="text" id="w-name" name="name" required autocomplete="name">
       <label for="w-text" class="label" style="display:block;margin:.9rem 0 .4rem">Your wishes</label>
-      <textarea id="w-text" name="wish" maxlength="280" required
+      <textarea id="w-text" name="wish" required
                 placeholder="Write your wishes here&hellip;"></textarea>
       <input type="text" name="_hp" tabindex="-1" autocomplete="off"
              style="position:absolute;left:-9999px;opacity:0">
