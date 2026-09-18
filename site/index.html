@@ -76,15 +76,13 @@ body.sealed{overflow:hidden;height:100dvh}
 #env.open{opacity:0;pointer-events:none}
 #env.gone{display:none}
 .env-top{position:relative;z-index:2;text-align:center;padding:0 20px}
-.env-top .lbl,.env-top .nm,.env-top .dt,.env-top .hint{transition:opacity .4s ease}
-#env.open .lbl,#env.open .nm,#env.open .dt,#env.open .hint{opacity:0}
+.env-top .lbl,.env-top .nm,.env-top .hint{transition:opacity .4s ease}
+#env.open .lbl,#env.open .nm,#env.open .hint{opacity:0}
 .env-top .lbl{font-family:var(--sans);font-weight:500;letter-spacing:.4em;text-transform:uppercase;
   font-size:.62rem;color:var(--rose-dp)}
 .env-top .nm{font-family:var(--script);font-size:clamp(1.9rem,7vw,2.8rem);color:var(--ink);
-  line-height:1.2;margin:.3rem 0 .1rem}
+  line-height:1.2;margin:.3rem 0 1.6rem}
 .env-top .nm .a{display:block;font-size:.5em;color:var(--rose-dp);margin:-.1em 0}
-.env-top .dt{font-family:var(--sans);font-weight:500;letter-spacing:.3em;text-transform:uppercase;
-  font-size:.58rem;color:var(--ink-2);margin-bottom:1.5rem}
 .envelope{position:relative;width:min(320px,82vw);aspect-ratio:33/23;perspective:1000px;margin:0 auto}
 .env-body{position:absolute;inset:0;background:#fdf4ef;border:1px solid #e8cac4;border-radius:8px;
   box-shadow:0 26px 60px -20px rgba(150,80,90,.42)}
@@ -95,8 +93,6 @@ body.sealed{overflow:hidden;height:100dvh}
 #env.open .env-card{transform:translateY(-94%) scale(1.04)}
 .env-card img{width:clamp(46px,13vw,62px)}
 .env-card .c-nm{font-family:var(--script);font-size:1.15rem;color:var(--ink);line-height:1.1}
-.env-card .c-dt{font-family:var(--sans);font-weight:500;font-size:.5rem;letter-spacing:.26em;
-  text-transform:uppercase;color:var(--rose-dp)}
 .env-front{position:absolute;inset:0;z-index:3;background:linear-gradient(180deg,#fcf1ec,#f6e2dc);
   border-radius:0 0 8px 8px;clip-path:polygon(0 0,50% 54%,100% 0,100% 100%,0 100%)}
 .env-vline{position:absolute;inset:0;z-index:4;background:rgba(232,202,196,.85);
@@ -197,10 +193,10 @@ section.cream{background:var(--paper)}
 .photobg{position:absolute;inset:0;background-size:cover;background-position:center;
   animation:kb 34s ease-in-out infinite alternate}
 .photowash{position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,var(--paper) 0%,rgba(253,243,240,.82) 14%,
-    rgba(253,243,240,.68) 50%,rgba(253,243,240,.82) 86%,var(--paper) 100%)}
-.photowash.blush{background:linear-gradient(180deg,var(--paper-2) 0%,rgba(251,232,229,.84) 14%,
-    rgba(251,232,229,.7) 50%,rgba(251,232,229,.84) 86%,var(--paper-2) 100%)}
+  background:linear-gradient(180deg,var(--paper) 0%,rgba(253,243,240,.72) 12%,
+    rgba(253,243,240,.54) 50%,rgba(253,243,240,.72) 88%,var(--paper) 100%)}
+.photowash.blush{background:linear-gradient(180deg,var(--paper-2) 0%,rgba(251,232,229,.74) 12%,
+    rgba(251,232,229,.56) 50%,rgba(251,232,229,.74) 88%,var(--paper-2) 100%)}
 section.blushbg{background:var(--paper-2)}
 h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
   font-size:clamp(.72rem,2.2vw,.86rem);color:var(--deep);font-weight:500}
@@ -254,7 +250,7 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
 .cdsec{color:var(--white)}
 .cdsec .pic{position:absolute;inset:0;background:url(img/p2.jpg) center 34%/cover no-repeat;
   animation:kb 34s ease-in-out infinite alternate}
-.cdsec .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(140,72,84,.44),rgba(110,52,62,.52))}
+.cdsec .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(140,72,84,.36),rgba(110,52,62,.46))}
 .cdsec h2.title,.cdsec .subtitle{color:#fff4f2}
 .cdgrid{display:flex;justify-content:center;gap:0;margin-top:1.4rem}
 .cdcell{padding:0 clamp(.7rem,3.4vw,1.6rem)}
@@ -283,7 +279,7 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
 .venuesec .pic{position:absolute;inset:0;background:url(img/p5.jpg) center 30%/cover no-repeat;
   animation:kb 30s ease-in-out infinite alternate}
 .venuesec .veil{position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(120,60,70,.2),rgba(253,243,240,.8) 34%,rgba(253,243,240,.86))}
+  background:linear-gradient(180deg,rgba(120,60,70,.16),rgba(253,243,240,.72) 32%,rgba(253,243,240,.8))}
 .venuecard{position:relative;z-index:3;margin-inline:auto;width:100%;max-width:600px;text-align:center}
 .venuecard .pin{width:24px;height:24px;margin:0 auto;color:var(--rose-dp)}
 .venuecard .label{margin-top:.2rem}
@@ -442,13 +438,11 @@ body.entering{overflow:hidden}
   <div class="env-top">
     <p class="lbl">You Are Invited</p>
     <p class="nm">Vijaysreeram<span class="a">and</span>Suganthini</p>
-    <p class="dt">14 &amp; 15 November 2026 &middot; Kurunjeri</p>
     <div class="envelope">
       <div class="env-body" aria-hidden="true"></div>
       <div class="env-card" aria-hidden="true">
         <img src="img/vs-logo.png" alt="">
         <p class="c-nm">Vijaysreeram &amp; Suganthini</p>
-        <p class="c-dt">Nov 14 &amp; 15, 2026</p>
       </div>
       <div class="env-front" aria-hidden="true"></div>
       <div class="env-vline" aria-hidden="true"></div>
