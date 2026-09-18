@@ -14,7 +14,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500&family=Parisienne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/p7.jpg">
 <link rel="icon" type="image/png" href="img/vs-icon.png">
 <style>
@@ -386,8 +386,8 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
 .capseal{width:54px;height:54px;margin:1.1rem auto 0;display:block;color:var(--rose-dp);
   animation:sealspin 26s linear infinite}
 @keyframes sealspin{to{transform:rotate(360deg)}}
-.capcd{margin-top:1.3rem;font-family:var(--sans);font-weight:500;letter-spacing:.2em;
-  text-transform:uppercase;font-size:clamp(.56rem,2.1vw,.66rem);color:var(--rose-dp)}
+.capcd{margin-top:1.4rem;font-family:var(--sans);font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;font-size:clamp(.66rem,2.5vw,.8rem);color:var(--deep)}
 .caplist{margin-top:1.3rem;display:flex;flex-direction:column;gap:.7rem}
 .sealcard{display:flex;gap:.85rem;align-items:flex-start;background:var(--white);
   border:1px solid rgba(229,169,173,.5);border-left:3px solid var(--rose);border-radius:12px;
@@ -529,12 +529,12 @@ body.entering{overflow:hidden}
   <ul>
     <li><a href="#surprise">A Little Surprise</a></li>
     <li><a href="#story">Our Story</a></li>
-    <li><a href="#countdown">Countdown</a></li>
     <li><a href="#ceremonies">Ceremonies</a></li>
     <li><a href="#venue">Venue</a></li>
     <li><a href="#dates">Save the Dates</a></li>
     <li><a href="#album">Our Album</a></li>
     <li><a href="#capsule">Time Capsule</a></li>
+    <li><a href="#countdown">Countdown</a></li>
   </ul>
 </nav>
 
@@ -593,22 +593,6 @@ body.entering{overflow:hidden}
         <p class="sign">Vijaysreeram &amp; Suganthini</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ 5. COUNTDOWN ============ -->
-<section class="cdsec" id="countdown">
-  <div class="pic"></div><div class="veil"></div>
-  <div class="wrap">
-    <h2 class="title rv">Muhurtham Countdown</h2>
-    <div class="cdgrid rv d1" id="cd">
-      <div class="cdcell"><b id="c-d">--</b><span>Days</span></div>
-      <div class="cdcell"><b id="c-h">--</b><span>Hours</span></div>
-      <div class="cdcell"><b id="c-m">--</b><span>Minutes</span></div>
-      <div class="cdcell"><b id="c-s">--</b><span>Seconds</span></div>
-    </div>
-    <p class="subtitle rv d2">Until our forever</p>
-    <div class="rv d2"><svg class="heart big" aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg></div>
   </div>
 </section>
 
@@ -887,6 +871,22 @@ body.entering{overflow:hidden}
     <div class="caplist" id="caplist"></div>
     <p class="capempty rv d3" id="cap-empty">The capsule is empty. Be the first to seal something.</p>
     <p class="note-sc rv d3">See you here on 15 November 2036</p>
+  </div>
+</section>
+
+<!-- ============ 5. COUNTDOWN ============ -->
+<section class="cdsec" id="countdown">
+  <div class="pic"></div><div class="veil"></div>
+  <div class="wrap">
+    <h2 class="title rv">Muhurtham Countdown</h2>
+    <div class="cdgrid rv d1" id="cd">
+      <div class="cdcell"><b id="c-d">--</b><span>Days</span></div>
+      <div class="cdcell"><b id="c-h">--</b><span>Hours</span></div>
+      <div class="cdcell"><b id="c-m">--</b><span>Minutes</span></div>
+      <div class="cdcell"><b id="c-s">--</b><span>Seconds</span></div>
+    </div>
+    <p class="subtitle rv d2">Until our forever</p>
+    <div class="rv d2"><svg class="heart big" aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg></div>
   </div>
 </section>
 
