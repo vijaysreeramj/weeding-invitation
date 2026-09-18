@@ -1313,8 +1313,6 @@ var OPEN_DATE=new Date('2036-11-15T06:00:00+05:30').getTime();
     btn.disabled=true;
     note.textContent='Sealing…';
 
-    list.insertBefore(card(n, stamp(Date.now()), opened? t : '', true), list.firstChild);
-    empty.style.display='none';
     if(window.burstHearts) window.burstHearts();
 
     send({name:n,note:t,hp:''}).then(function(){
@@ -1343,7 +1341,15 @@ var OPEN_DATE=new Date('2036-11-15T06:00:00+05:30').getTime();
     cdText.textContent='Opens '+span(diff)+' · 15 November 2036';
   }
   tickCapsule(); setInterval(tickCapsule,60000);
-  flush(); loadSealed();
+  flush();
+  if(opened){
+    loadSealed();
+  } else {
+    // sealed: nothing is listed, so a note gives nothing away
+    list.innerHTML='';
+    list.style.display='none';
+    empty.style.display='none';
+  }
 })();
 
 /* ---------- drifting petals ---------- */
