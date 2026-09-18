@@ -849,7 +849,7 @@ body.entering{overflow:hidden}
 
 <!-- ============ THE TIME CAPSULE ============ -->
 <section class="cream" id="capsule">
-  <div class="photobg" style="background-image:url(img/p11.jpg);background-position:22% 18%"></div>
+  <div class="photobg" style="background-image:url(img/p11.jpg);background-position:14% 18%"></div>
   <div class="photowash"></div>
   <svg class="flora bl" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
   <div class="wrap">
@@ -1214,7 +1214,7 @@ var OPEN_DATE=new Date('2036-11-15T06:00:00+05:30').getTime();
   function pending(v){
     try{
       if(v===undefined) return JSON.parse(localStorage.getItem('vs2_pending')||'[]');
-      localStorage.setItem('vs2_pending',JSON.stringify(v));
+      localStorage.setItem('vs2_pending',JSON.stringify(v.slice(-20)));
     }catch(e){ return []; }
   }
   function bars(n){
@@ -1253,21 +1253,39 @@ var OPEN_DATE=new Date('2036-11-15T06:00:00+05:30').getTime();
     var fn='__cap'+Math.random().toString(36).slice(2);
     var sc=document.createElement('script');
     var done=false;
+    empty.textContent='Opening the capsule\u2026';
+    empty.style.display='';
+    function unreachable(){
+      if(done) return;
+      done=true; sc.remove();
+      empty.textContent = list.children.length
+        ? '' : 'The capsule is resting. Your note will still seal \u2014 try again in a moment.';
+      empty.style.display = list.children.length ? 'none' : '';
+    }
     window[fn]=function(data){
       done=true;
       try{ delete window[fn]; }catch(e){ window[fn]=undefined; }
       sc.remove();
-      if(!data||!data.ok||!data.notes) return;
+      if(!data||!data.ok||!data.notes){ unreachable(); return; }
+      var mine=list.querySelectorAll('.sealcard.fresh');
       list.innerHTML='';
       data.notes.forEach(function(x){
         list.appendChild(card(x.name, stamp(x.when), x.note||'', false));
       });
-      if(data.notes.length) empty.style.display='none';
+      if(data.notes.length){
+        empty.style.display='none';
+      } else if(mine.length){
+        for(var i=0;i<mine.length;i++) list.appendChild(mine[i]);
+        empty.style.display='none';
+      } else {
+        empty.textContent='The capsule is empty. Be the first to seal something.';
+        empty.style.display='';
+      }
     };
-    sc.onerror=function(){ sc.remove(); };
+    sc.onerror=unreachable;
     sc.src=CAPSULE_URL+'?callback='+fn+'&t='+Date.now();
     document.head.appendChild(sc);
-    setTimeout(function(){ if(!done) sc.remove(); },15000);
+    setTimeout(unreachable,15000);
   }
 
   function send(payload){
@@ -1309,11 +1327,20 @@ var OPEN_DATE=new Date('2036-11-15T06:00:00+05:30').getTime();
     });
   });
 
+  function span(ms){
+    var d=Math.floor(ms/864e5);
+    if(d<=1) return 'tomorrow';
+    if(d<60) return 'in '+d+' days';
+    var y=Math.floor(d/365.25), m=Math.floor((d-y*365.25)/30.44);
+    if(y<1) return 'in '+Math.max(1,m)+(m===1?' month':' months');
+    var out='in '+y+(y===1?' year':' years');
+    if(m>0) out+=' and '+m+(m===1?' month':' months');
+    return out;
+  }
   function tickCapsule(){
     var diff=OPEN_DATE-Date.now();
-    if(diff<=0){ cdText.textContent='The capsule is open.'; return; }
-    var d=Math.floor(diff/864e5);
-    cdText.textContent='Opens in '+d.toLocaleString('en-GB')+' days · 15 November 2036';
+    if(diff<=0){ cdText.textContent='The capsule is open · 15 November 2036'; return; }
+    cdText.textContent='Opens '+span(diff)+' · 15 November 2036';
   }
   tickCapsule(); setInterval(tickCapsule,60000);
   flush(); loadSealed();

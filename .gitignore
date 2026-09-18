@@ -3,3 +3,6 @@ package-lock.json
 package.json
 .netlify/
 .DS_Store
+
+# local render/debug copies
+site/_*.html
