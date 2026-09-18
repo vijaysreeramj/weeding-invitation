@@ -375,6 +375,32 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
   line-height:1.5}
 
 
+/* ---- time capsule ---- */
+.capseal{width:54px;height:54px;margin:1.1rem auto 0;display:block;color:var(--rose-dp);
+  animation:sealspin 26s linear infinite}
+@keyframes sealspin{to{transform:rotate(360deg)}}
+.capcd{margin-top:1.3rem;font-family:var(--sans);font-weight:500;letter-spacing:.2em;
+  text-transform:uppercase;font-size:clamp(.56rem,2.1vw,.66rem);color:var(--rose-dp)}
+.caplist{margin-top:1.3rem;display:flex;flex-direction:column;gap:.7rem}
+.sealcard{display:flex;gap:.85rem;align-items:flex-start;background:var(--white);
+  border:1px solid rgba(229,169,173,.5);border-left:3px solid var(--rose);border-radius:12px;
+  padding:.9rem 1.1rem;text-align:left}
+.sealcard.fresh{animation:sealin .65s cubic-bezier(.2,1.3,.4,1) both}
+@keyframes sealin{from{opacity:0;transform:translateY(-8px) scale(.96)}to{opacity:1;transform:none}}
+.waxdot{flex:0 0 auto;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 36% 30%,#eab8ae,#d08d88 55%,#b87275);
+  box-shadow:inset 0 -3px 6px rgba(140,70,80,.4),inset 0 2px 3px rgba(255,235,230,.5)}
+.waxdot svg{width:13px;height:12px;fill:#fff6f4;opacity:.9}
+.sealbody{flex:1;min-width:0}
+.redact{display:flex;flex-direction:column;gap:6px;padding:.15rem 0 .1rem}
+.redact i{display:block;height:9px;border-radius:5px;
+  background:linear-gradient(90deg,rgba(229,169,173,.45),rgba(229,169,173,.22))}
+.sealtext{font-size:1rem;font-weight:500;color:var(--ink);white-space:pre-wrap;
+  overflow-wrap:break-word;word-break:break-word}
+.sealbody small{display:block;margin-top:.55rem;font-family:var(--sans);font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;font-size:.54rem;color:var(--rose-dp)}
+.capempty{font-style:italic;color:var(--muted);margin-top:1rem;font-size:.98rem}
+
 /* forms */
 .card{background:var(--white);border:1px solid rgba(229,169,173,.5);border-radius:16px;
   padding:clamp(1.3rem,4vw,2rem);margin-top:1.3rem;text-align:left;
@@ -390,14 +416,6 @@ h2.title{font-family:var(--sans);letter-spacing:.3em;text-transform:uppercase;
 .send:hover{background:var(--rose-dp)}
 .status{font-family:var(--script);font-size:1.1rem;color:var(--rose-dp);margin-top:.7rem;
   text-align:center;min-height:1.4em}
-.wishes-list{margin-top:1.2rem;display:flex;flex-direction:column;gap:.7rem}
-.wish{background:var(--white);border-left:3px solid var(--rose);border-radius:10px;
-  padding:.85rem 1.1rem;text-align:left}
-.wish p{font-size:1rem;font-weight:500;color:var(--ink);white-space:pre-wrap;
-  overflow-wrap:break-word;word-break:break-word}
-.wish small{display:block;margin-top:.5rem;font-family:var(--sans);font-weight:500;
-  letter-spacing:.18em;text-transform:uppercase;
-  font-size:.56rem;color:var(--rose-dp)}
 
 
 /* closing */
@@ -508,7 +526,7 @@ body.entering{overflow:hidden}
     <li><a href="#venue">Venue</a></li>
     <li><a href="#dates">Save the Dates</a></li>
     <li><a href="#album">Our Album</a></li>
-    <li><a href="#wishes">Wishes Wall</a></li>
+    <li><a href="#capsule">Time Capsule</a></li>
   </ul>
 </nav>
 
@@ -819,27 +837,46 @@ body.entering{overflow:hidden}
   </div>
 </section>
 
-<!-- ============ 10. WISHES WALL ============ -->
-<section class="cream" id="wishes">
+<!-- ============ THE TIME CAPSULE ============ -->
+<section class="cream" id="capsule">
   <div class="photobg" style="background-image:url(img/p9.jpg)"></div>
   <div class="photowash"></div>
   <svg class="flora bl" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
   <div class="wrap">
-    <h2 class="title rv">Wishes Wall</h2>
-    <p class="subtitle rv d1">Leave us a little note</p>
-    <form class="card rv d2" id="wish-form">
-      <label for="w-name" class="label" style="display:block;margin-bottom:.4rem">Your name</label>
-      <input type="text" id="w-name" name="name" required autocomplete="name">
-      <label for="w-text" class="label" style="display:block;margin:.9rem 0 .4rem">Your wishes</label>
-      <textarea id="w-text" name="wish" required
-                placeholder="Write your wishes here&hellip;"></textarea>
+    <h2 class="title rv">The Time Capsule</h2>
+    <p class="subtitle rv d1">Sealed until our first anniversary</p>
+
+    <svg class="capseal rv d1" viewBox="0 0 64 64" aria-hidden="true">
+      <circle cx="32" cy="32" r="26" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".55"/>
+      <circle cx="32" cy="32" r="20" fill="currentColor" opacity=".12"/>
+      <path d="M32 20v24M20 32h24" stroke="currentColor" stroke-width="1.4" opacity=".45"/>
+      <circle cx="32" cy="32" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    </svg>
+
+    <p class="lead rv d2" style="margin-top:1rem">
+      Write us something we cannot read yet &mdash; a memory, a piece of advice,
+      a wish, or a wild guess about where we&rsquo;ll be in a year.
+    </p>
+    <p class="lead rv d2" style="margin-top:.9rem">
+      Every note seals the moment you send it. Nobody opens a single one
+      &mdash; not even us &mdash; until our first anniversary.
+    </p>
+    <p class="capcd rv d2" id="cap-countdown">&nbsp;</p>
+
+    <form class="card rv d3" id="cap-form">
+      <label for="c-name" class="label" style="display:block;margin-bottom:.4rem">Your name</label>
+      <input type="text" id="c-name" name="name" required autocomplete="name">
+      <label for="c-note" class="label" style="display:block;margin:.9rem 0 .4rem">Your note to the future</label>
+      <textarea id="c-note" name="note" required placeholder="We&rsquo;ll read this in a year&hellip;"></textarea>
       <input type="text" name="_hp" tabindex="-1" autocomplete="off"
              style="position:absolute;left:-9999px;opacity:0">
-      <button class="send rippleable" type="submit">Post</button>
-      <p class="status" id="wish-status"></p>
+      <button class="send rippleable" type="submit">Seal My Note</button>
+      <p class="status" id="cap-status"></p>
     </form>
-    <div class="wishes-list" id="wall"></div>
-    <p class="note-sc rv d3">Your words will stay with us forever</p>
+
+    <div class="caplist" id="caplist"></div>
+    <p class="capempty rv d3" id="cap-empty">The capsule is empty. Be the first to seal something.</p>
+    <p class="note-sc rv d3">See you here on 15 November 2027</p>
   </div>
 </section>
 
@@ -1150,29 +1187,76 @@ tick(); var timer=setInterval(tick,1000);
   size(); addEventListener('resize',function(){ if(!done) size(); });
 })();
 
-/* ---------- wishes + songs (saved in this browser) ----------
-   To collect these centrally, POST the same fields to a form service
-   (Formspree / FormSubmit / your own endpoint) from inside each submit handler. */
+/* ---------- the time capsule ----------
+   Sealed notes live in this browser until OPEN_DATE, then unseal by themselves.
+   To collect them centrally, POST the same fields to a form service from
+   inside the submit handler below. -------------------------------------- */
+var OPEN_DATE=new Date('2027-11-15T06:00:00+05:30').getTime();
 function load(k){ try{ return JSON.parse(localStorage.getItem(k)||'[]'); }catch(e){ return []; } }
 function save(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} }
 
-var wall=document.getElementById('wall'), wishes=load('vs2_wishes');
-function wishEl(n,t){
-  var d=document.createElement('div'); d.className='wish';
-  var p=document.createElement('p'); p.textContent='“'+t+'”';
-  var s=document.createElement('small'); s.textContent='— '+n;
-  d.appendChild(p); d.appendChild(s); return d;
-}
-wishes.forEach(function(w){ wall.appendChild(wishEl(w[0],w[1])); });
-document.getElementById('wish-form').addEventListener('submit',function(e){
-  e.preventDefault();
-  var f=e.target; if(f._hp.value) return;
-  var n=f.name.value.trim(), t=f.wish.value.trim(); if(!n||!t) return;
-  wall.insertBefore(wishEl(n,t),wall.firstChild);
-  wishes.unshift([n,t]); save('vs2_wishes',wishes);
-  document.getElementById('wish-status').textContent='Thank you for your blessings';
-  burstHearts(); f.reset();
-});
+(function(){
+  var form=document.getElementById('cap-form'), list=document.getElementById('caplist'),
+      empty=document.getElementById('cap-empty'), note=document.getElementById('cap-status'),
+      cdText=document.getElementById('cap-countdown');
+  if(!form) return;
+  var notes=load('vs2_capsule');
+  var unsealed=Date.now()>=OPEN_DATE;
+
+  function bars(text){
+    var wrap=document.createElement('div'); wrap.className='redact';
+    var lines=Math.max(2,Math.min(6,Math.ceil(text.length/42)));
+    for(var i=0;i<lines;i++){
+      var b=document.createElement('i');
+      b.style.width=(i===lines-1? 35+Math.random()*30 : 78+Math.random()*22)+'%';
+      wrap.appendChild(b);
+    }
+    return wrap;
+  }
+  function card(n,t,when,fresh){
+    var d=document.createElement('div'); d.className='sealcard'+(fresh?' fresh':'');
+    var seal=document.createElement('span'); seal.className='waxdot';
+    seal.innerHTML='<svg viewBox="0 0 24 22"><use href="#hrt"/></svg>';
+    var body=document.createElement('div'); body.className='sealbody';
+    if(unsealed){
+      var p=document.createElement('p'); p.className='sealtext'; p.textContent='\u201C'+t+'\u201D';
+      body.appendChild(p);
+    } else {
+      body.appendChild(bars(t));
+    }
+    var who=document.createElement('small');
+    who.textContent='\u2014 '+n+(when? ' \u00B7 sealed '+when : '');
+    body.appendChild(who);
+    d.appendChild(seal); d.appendChild(body);
+    return d;
+  }
+  function stamp(d){ return new Date(d).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}); }
+
+  notes.forEach(function(w){ list.appendChild(card(w[0],w[1],w[2]?stamp(w[2]):'',false)); });
+  if(notes.length) empty.style.display='none';
+
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    if(form._hp.value) return;
+    var n=form.name.value.trim(), t=form.note.value.trim();
+    if(!n||!t) return;
+    var ts=Date.now();
+    list.insertBefore(card(n,t,stamp(ts),true), list.firstChild);
+    empty.style.display='none';
+    notes.unshift([n,t,ts]); save('vs2_capsule',notes);
+    note.textContent = unsealed ? 'Added to the capsule.' : 'Sealed. See you on 15 November 2027.';
+    if(window.burstHearts) window.burstHearts();
+    form.reset();
+  });
+
+  function tickCapsule(){
+    var diff=OPEN_DATE-Date.now();
+    if(diff<=0){ cdText.textContent='The capsule is open.'; return; }
+    var d=Math.floor(diff/864e5);
+    cdText.textContent='Opens in '+d.toLocaleString('en-GB')+' days \u00B7 15 November 2027';
+  }
+  tickCapsule(); setInterval(tickCapsule,60000);
+})();
 
 /* ---------- drifting petals ---------- */
 var burstHearts;
