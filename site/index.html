@@ -207,6 +207,8 @@ body.sealed{overflow:hidden;height:100dvh}
 /* ============ sections ============ */
 section{position:relative;padding:clamp(3.6rem,10vw,6rem) 0;text-align:center;overflow:hidden}
 section.cream{background:var(--paper)}
+section.clear{background:transparent}
+.duo{position:relative;overflow:hidden;background:var(--paper)}
 .photobg{position:absolute;inset:0;background-size:cover;background-position:center;
   animation:kb 34s ease-in-out infinite alternate}
 .photowash{position:absolute;inset:0;z-index:1;
@@ -552,10 +554,12 @@ body.entering{overflow:hidden}
   </div>
 </header>
 
-<!-- ============ 2. A LITTLE SURPRISE ============ -->
-<section class="cream" id="surprise">
+<!-- ===== one photograph spanning the surprise + story pair ===== -->
+<div class="duo">
   <div class="photobg" style="background-image:url(img/p12.jpg)"></div>
   <div class="photowash"></div>
+<!-- ============ 2. A LITTLE SURPRISE ============ -->
+<section class="clear" id="surprise">
   <svg class="flora tr" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
   <svg class="flora bl" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
   <div class="wrap">
@@ -577,9 +581,7 @@ body.entering{overflow:hidden}
 </section>
 
 <!-- ============ 4. OUR STORY ============ -->
-<section class="cream" id="story">
-  <div class="photobg" style="background-image:url(img/p12.jpg)"></div>
-  <div class="photowash"></div>
+<section class="clear" id="story">
   <svg class="flora tl" viewBox="0 0 200 200" aria-hidden="true"><use href="#floral"/></svg>
   <div class="wrap">
     <h2 class="title rv">Our Story</h2>
@@ -597,6 +599,7 @@ body.entering{overflow:hidden}
     </div>
   </div>
 </section>
+</div>
 
 <!-- ============ 6. CEREMONIES ============ -->
 <section class="cream" id="ceremonies">
