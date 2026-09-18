@@ -1418,7 +1418,7 @@ var burstHearts;
 /* ---------- background music ----------
    Played through a YouTube embed rather than a hosted file, so the track stays
    licensed. Swap YT_ID for another video to change the song. -------------- */
-var YT_ID='xW8rSMijGPM';   /* Inkem Inkem Kaavale — Tamil version */
+var YT_ID='x84OUIVai3Y';   /* Inkem Inkem — flute instrumental, Flute Siva */
 (function(){
   var btn=document.getElementById('musicBtn');
   var player=null, ready=false, want=false, loading=false;
@@ -1440,7 +1440,7 @@ var YT_ID='xW8rSMijGPM';   /* Inkem Inkem Kaavale — Tamil version */
         events:{
           onReady:function(){
             ready=true;
-            player.setVolume(18);          /* kept low — it is background, not a performance */
+            player.setVolume(24);          /* instrumental, so it can sit a touch higher */
             if(want) player.playVideo();
           },
           onError:function(){ setIcon(false); want=false; }
@@ -1456,7 +1456,7 @@ var YT_ID='xW8rSMijGPM';   /* Inkem Inkem Kaavale — Tamil version */
     want=!want;
     setIcon(want);
     if(!ready){ if(want) boot(); return; }
-    if(want){ player.setVolume(18); player.playVideo(); }
+    if(want){ player.setVolume(24); player.playVideo(); }
     else { player.pauseVideo(); }
   });
 })();
