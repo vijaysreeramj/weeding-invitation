@@ -73,7 +73,7 @@ window.INVITE = {
 
   /* ---- odds and ends --------------------------------------------------- */
   musicVideoId: 'x84OUIVai3Y',                  // YouTube id, played softly
-  photoAlbumUrl: 'https://photos.google.com/',  // your shared album
+  photoAlbumUrl: 'https://photos.app.goo.gl/WAvGtWFo3XSmVW618',  // shared album, collaborate on
 
   /* What people see when the link is pasted into WhatsApp. Deliberately
      free of dates and venue, so the invitation itself does the telling. */

@@ -57,8 +57,6 @@ per `apps-script/README.md`.
   Wikimedia Commons. Swap them for your own when you have them.
 - **Watermarks.** Photos 4 and 5 (Ceremonies, Venue) carry another
   photographer's watermark. Replace them with your own before sharing.
-- **Shared album.** The "Add Your Photos" button points at a placeholder
-  `photos.google.com` link — swap in the real shared-album URL.
 - **Wishes & song requests.** These currently save to each visitor's own browser
   (localStorage). To collect them centrally, POST the same fields to a form
   service from the marked spot in the script at the bottom of `index.html`.
