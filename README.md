@@ -10,6 +10,7 @@ A single-page animated wedding invitation.
 
 ```
 site/
+  config.js               names, families, dates, venue, links — edit this
   index.html              the invitation — blush watercolour, no build step
   img/                    photos, backdrops and the VS monogram
   img/hero1..3.jpg        the three hero photos that slide horizontally
@@ -37,6 +38,18 @@ to `main` redeploys.
 
 If Vercel does not pick up `vercel.json`, set **Root Directory** to `site` in
 Project Settings instead.
+
+## Reusing this for another couple
+
+Everything that changes per wedding lives in `site/config.js`: both names, both
+families, the events with their dates and times, the venue and its address, the
+nearest town for the route map, the hashtag, the music, the album link and the
+time capsule. Edit that one file and the whole page follows — index.html needs
+no changes.
+
+Then swap the photographs in `site/img/` and the monogram (`vs-logo.png`,
+`vs-logo-light.png`, `vs-icon.png`), and point the capsule at a new Google Sheet
+per `apps-script/README.md`.
 
 ## Still to do
 

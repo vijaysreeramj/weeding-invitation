@@ -4,14 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vijaysreeram &amp; Suganthini — Our Wedding Invitation</title>
-<meta name="description" content="Vijaysreeram &amp; Suganthini. Reception 14 Nov, Muhurtham 15 Nov 2026 at Sri Rudhram Mahal, Kurunjeri.">
+<meta name="description" content="We are getting married — tap to open our invitation.">
 <meta name="theme-color" content="#fbe9e7">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Vijaysreeram &amp; Suganthini — Our Wedding Invitation">
-<meta property="og:description" content="Reception 14 Nov · Muhurtham 15 Nov 2026 · Sri Rudhram Mahal, Kurunjeri">
+<meta property="og:description" content="We are getting married — tap to open our invitation.">
 <meta property="og:url" content="https://vijaysreeram-weds-suganthini.vercel.app/">
 <meta property="og:image" content="https://vijaysreeram-weds-suganthini.vercel.app/img/p2.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<script src="config.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
@@ -497,7 +498,7 @@ body.entering{overflow:hidden}
     <p class="line">because our favourite chapter<br>is about to begin&hellip;
       <svg class="pk sm" aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg></p>
     <svg class="env-orn" viewBox="0 0 86 14" aria-hidden="true"><use href="#orn"/></svg>
-    <p class="nm">Vijaysreeram<span class="x">&times;</span>Suganthini</p>
+    <p class="nm" data-pair="times"></p>
     <p class="line2">and we want you there when it does.</p>
     <p class="cc">Come celebrate with us
       <svg class="pk" aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg></p>
@@ -505,7 +506,7 @@ body.entering{overflow:hidden}
       <div class="env-body" aria-hidden="true"></div>
       <div class="env-card" aria-hidden="true">
         <img src="img/vs-logo.png" alt="">
-        <p class="c-nm">Vijaysreeram &amp; Suganthini</p>
+        <p class="c-nm" data-pair="amp"></p>
       </div>
       <div class="env-front" aria-hidden="true"></div>
       <div class="env-vline" aria-hidden="true"></div>
@@ -551,7 +552,7 @@ body.entering{overflow:hidden}
     <img class="crest" src="img/vs-logo-light.png" alt="V &amp; S monogram">
     <div class="label">Together Forever</div>
     <svg class="heart big" aria-hidden="true" viewBox="0 0 24 22" style="margin:.5rem auto 0"><use href="#hrt"/></svg>
-    <h1>Vijaysreeram<span class="amp">&amp;</span>Suganthini</h1>
+    <h1 data-pair="block"></h1>
     <div class="sub">Our Wedding Invitation</div>
     <div class="three">Two hearts &nbsp;&middot;&nbsp; One journey &nbsp;&middot;&nbsp; Forever</div>
     <a class="enter rippleable" href="#surprise">Enter <svg class="heart" aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg></a>
@@ -574,12 +575,12 @@ body.entering{overflow:hidden}
     <div class="seal-wrap rv d2" id="scratch">
       <div class="seal-under">
         <div>
-          <div class="du">14 &amp; 15<br>November 2026</div>
-          <div class="dl">Kurunjeri</div>
+          <div class="du" data-html="sealDates"></div>
+          <div class="dl" data-i="venue.area"></div>
         </div>
       </div>
       <canvas id="scratch-canvas" role="img"
-        aria-label="Scratch to reveal the wedding dates: 14 and 15 November 2026"></canvas>
+        data-aria="Scratch to reveal the wedding dates: |sealDatesPlain|"></canvas>
     </div>
   </div>
 </section>
@@ -598,7 +599,7 @@ body.entering{overflow:hidden}
            and the one I want beside me through every little adventure life brings.
            And now, after all the memories we&rsquo;ve made, we&rsquo;re ready to make
            the biggest one yet &mdash; becoming a family.</p>
-        <p class="sign">Vijaysreeram &amp; Suganthini</p>
+        <p class="sign" data-pair="amp"></p>
       </div>
     </div>
   </div>
@@ -617,21 +618,21 @@ body.entering{overflow:hidden}
     <div class="cers">
       <div class="cer rv d1">
         <svg class="gop" viewBox="0 0 100 110" aria-hidden="true"><use href="#gopuram"/></svg>
-        <h3>Reception</h3>
-        <div class="dt">14 Nov 2026</div>
-        <div class="tm">6:00 PM onwards</div>
+        <h3 data-ev="0.name"></h3>
+        <div class="dt" data-ev="0.date"></div>
+        <div class="tm" data-ev="0.time"></div>
         <div class="hb"><svg class="heart" aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg></div>
         <a class="btn rippleable" style="margin-top:.8rem" target="_blank" rel="noopener"
-           href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Vijaysreeram+%26+Suganthini+-+Reception&amp;dates=20261114T180000/20261114T220000&amp;ctz=Asia/Kolkata&amp;location=Sri+Rudhram+Mahal,+Pethappampati+Rd,+Kurunjeri,+Tamil+Nadu+642154">Add to Calendar</a>
+           data-cal="0">Add to Calendar</a>
       </div>
       <div class="cer rv d2">
         <svg class="gop" viewBox="0 0 100 110" aria-hidden="true"><use href="#gopuram"/></svg>
-        <h3>Muhurtham</h3>
-        <div class="dt">15 Nov 2026</div>
-        <div class="tm">6:00 AM &ndash; 7:00 AM</div>
+        <h3 data-ev="1.name"></h3>
+        <div class="dt" data-ev="1.date"></div>
+        <div class="tm" data-ev="1.time"></div>
         <div class="hb"><svg class="heart" aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg></div>
         <a class="btn rippleable" style="margin-top:.8rem" target="_blank" rel="noopener"
-           href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Vijaysreeram+%26+Suganthini+-+Muhurtham&amp;dates=20261115T060000/20261115T070000&amp;ctz=Asia/Kolkata&amp;location=Sri+Rudhram+Mahal,+Pethappampati+Rd,+Kurunjeri,+Tamil+Nadu+642154">Add to Calendar</a>
+           data-cal="1">Add to Calendar</a>
       </div>
     </div>
     <p class="note-sc rv d3">Two days of rituals,<br>endless moments of love</p>
@@ -645,10 +646,10 @@ body.entering{overflow:hidden}
     <div class="venuecard rv">
       <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z" fill="currentColor" fill-opacity=".14"/><circle cx="12" cy="10" r="2.6"/></svg>
       <h2 class="title" style="margin-top:.3rem">Come Celebrate With Us</h2>
-      <h3>Sri Rudhram Mahal</h3>
-      <p>Kurunjeri, Tamil Nadu</p>
+      <h3 data-i="venue.name"></h3>
+      <p data-i="venue.areaLong"></p>
       <a class="btn rippleable" target="_blank" rel="noopener"
-         href="https://www.google.com/maps/search/?api=1&amp;query=Sri+Rudhram+Mahal%2C+Pethappampati+Rd%2C+Kurunjeri%2C+Tamil+Nadu+642154">
+         data-map="1">
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor"
              stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
           <path d="M9 4.2 3.4 6.1v13.7L9 17.9l6 2 5.6-1.9V4.3L15 6.2l-6-2z"/>
@@ -698,7 +699,7 @@ body.entering{overflow:hidden}
             <circle cx="82" cy="172" r="6" fill="#fffaf8" stroke="#b86e79" stroke-width="2"/>
             <circle cx="82" cy="172" r="2.2" fill="#b86e79"/>
             <text class="cap" x="82" y="152" text-anchor="middle">Start</text>
-            <text class="lbl" x="82" y="198" text-anchor="middle">Udumalpet</text>
+            <text class="lbl" x="82" y="198" text-anchor="middle" data-i="venue.nearestTown"></text>
           </g>
 
           <!-- destination: the mandapam -->
@@ -715,11 +716,11 @@ body.entering{overflow:hidden}
                 <path d="M-42 13h84v28h-84z" fill="rgba(229,169,173,.18)"/>
               </g>
             </g>
-            <text class="lbl" x="472" y="118" text-anchor="middle">Sri Rudhram Mahal</text>
-            <text class="lbl sm" x="472" y="132" text-anchor="middle">Kurunjeri</text>
+            <text class="lbl" x="472" y="118" text-anchor="middle" data-i="venue.name"></text>
+            <text class="lbl sm" x="472" y="132" text-anchor="middle" data-i="venue.area"></text>
           </g>
         </svg>
-        <p class="foot">Udumalpet<i>&rarr;</i>Pethappampati Rd<i>&rarr;</i>Venue</p>
+        <p class="foot"><span data-i="venue.nearestTown"></span><i>&rarr;</i><span data-i="venue.road"></span><i>&rarr;</i>Venue</p>
       </div>
     </div>
   </div>
@@ -737,19 +738,19 @@ body.entering{overflow:hidden}
     <div class="lovecard rv d1">
       <p>With hearts full of happiness,<br>
          our families invite you to celebrate the beginning of<br>
-         <span class="nm">Vijaysreeram &amp; Suganthini&rsquo;s</span> forever.</p>
+         <span class="nm" data-pair="possessive"></span> forever.</p>
       <p>Your presence, blessings and love<br>
          will make these moments even more special.</p>
       <p class="fromline">With love from</p>
       <div class="famrow">
         <div class="fam">
-          <b>Jeyakumar &middot; Sasikala &middot; Nilesh</b>
-          <span>Groom&rsquo;s Family</span>
+          <b data-i="groom.family"></b>
+          <span data-i="groom.familyLabel"></span>
         </div>
         <div class="famamp">&amp;</div>
         <div class="fam">
-          <b>Krishnakishor &middot; Renuka &middot; Dharanees</b>
-          <span>Bride&rsquo;s Family</span>
+          <b data-i="bride.family"></b>
+          <span data-i="bride.familyLabel"></span>
         </div>
       </div>
       <p class="sign">Together with our families,<br>
@@ -769,26 +770,26 @@ body.entering{overflow:hidden}
     <h2 class="title rv">Save the Dates</h2>
     <svg class="orn rv" viewBox="0 0 86 14"><use href="#orn"/></svg>
     <div class="dates rv d1">
-      <div class="dcol"><div class="d">14</div><div class="my">Nov 2026</div></div>
+      <div class="dcol"><div class="d" data-ev="0.day"></div><div class="my" data-ev="0.monthYear"></div></div>
       <div class="damp">&amp;</div>
-      <div class="dcol"><div class="d">15</div><div class="my">Nov 2026</div></div>
+      <div class="dcol"><div class="d" data-ev="1.day"></div><div class="my" data-ev="1.monthYear"></div></div>
     </div>
     <div class="evrow rv d2">
       <div class="evcol">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/><circle cx="12" cy="15" r="1.6" fill="currentColor" stroke="none"/></svg>
-        <b>Reception</b>
-        <span>6:00 PM onwards</span>
+        <b data-ev="0.name"></b>
+        <span data-ev="0.time"></span>
       </div>
       <div class="evcol">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M12 3c1.9 2.9 3.3 4.3 3.3 6.2a3.3 3.3 0 0 1-6.6 0C8.7 7.3 10.1 5.9 12 3z" fill="currentColor" fill-opacity=".18"/><path d="M6 15h12M7.5 15v3.5a4.5 4.5 0 0 0 9 0V15"/></svg>
-        <b>Muhurtham</b>
-        <span>6:00 AM &ndash; 7:00 AM</span>
+        <b data-ev="1.name"></b>
+        <span data-ev="1.time"></span>
       </div>
     </div>
     <div class="place rv d3">
       <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z" fill="currentColor" fill-opacity=".14"/><circle cx="12" cy="10" r="2.6"/></svg>
-      <h3>Sri Rudhram Mahal</h3>
-      <p>Kurunjeri</p>
+      <h3 data-i="venue.name"></h3>
+      <p data-i="venue.area"></p>
     </div>
     <p class="note-sc rv d3">Your presence makes<br>our celebration more special</p>
     <div class="rv d3" style="margin-top:.4rem"><svg class="heart big" aria-hidden="true" viewBox="0 0 24 22"><use href="#hrt"/></svg></div>
@@ -836,7 +837,7 @@ body.entering{overflow:hidden}
     </div>
     <!-- Replace with your Google Photos shared-album link -->
     <a class="btn solid rippleable rv d3" style="margin-top:1.5rem"
-       href="https://photos.google.com/" target="_blank" rel="noopener">Add Your Photos</a>
+       data-album="1" target="_blank" rel="noopener">Add Your Photos</a>
   </div>
 </section>
 
@@ -879,7 +880,7 @@ body.entering{overflow:hidden}
 
     <div class="caplist" id="caplist"></div>
     <p class="capempty rv d3" id="cap-empty">The capsule is empty. Be the first to seal something.</p>
-    <p class="note-sc rv d3">See you here on 15 November 2036</p>
+    <p class="note-sc rv d3">See you here on <span data-i="capsule.opensLabel"></span></p>
   </div>
 </section>
 
@@ -904,7 +905,7 @@ body.entering{overflow:hidden}
   <div class="pic"></div><div class="veil"></div>
   <div class="wrap">
     <img class="crest-sm" src="img/vs-logo-light.png" alt="">
-    <p class="tag rv">#VijaysreeramWedsSuganthini</p>
+    <p class="tag rv" data-i="hashtag"></p>
     <p class="bring rv d1">Come dressed in your best, bring your blessings,
        your dancing shoes&hellip; and maybe your camera.</p>
     <p class="ty rv d2">Thank you for being a part of<br>our forever <svg class="heart" aria-hidden="true" viewBox="0 0 24 22" style="fill:#ffd9d6"><use href="#hrt"/></svg></p>
@@ -985,6 +986,78 @@ body.entering{overflow:hidden}
 </svg>
 
 <script>
+/* ---------- fill the page from config.js ---------- */
+var C = window.INVITE || {};
+function cval(path){
+  return path.split('.').reduce(function(o,k){ return (o==null? o : o[k]); }, C);
+}
+function pairNames(){
+  var o = C.order || ['groom','bride'];
+  return [ (C[o[0]]||{}).name || '', (C[o[1]]||{}).name || '' ];
+}
+(function applyInvite(){
+  if(!C.groom) return;                       /* config missing: leave the markup as written */
+  var n = pairNames(), A = n[0], B = n[1];
+
+  document.querySelectorAll('[data-i]').forEach(function(el){
+    var v = cval(el.getAttribute('data-i'));
+    if(v != null) el.textContent = v;
+  });
+  document.querySelectorAll('[data-html]').forEach(function(el){
+    var v = cval(el.getAttribute('data-html'));
+    if(v != null) el.innerHTML = v;
+  });
+  document.querySelectorAll('[data-ev]').forEach(function(el){
+    var bits = el.getAttribute('data-ev').split('.');
+    var ev = (C.events||[])[+bits[0]];
+    if(ev && ev[bits[1]] != null) el.textContent = ev[bits[1]];
+  });
+  document.querySelectorAll('[data-aria]').forEach(function(el){
+    el.setAttribute('aria-label',
+      el.getAttribute('data-aria').replace(/\|([^|]+)\|/g, function(_,k){ return cval(k)||''; }));
+  });
+
+  document.querySelectorAll('[data-pair]').forEach(function(el){
+    var kind = el.getAttribute('data-pair');
+    if(kind === 'times'){
+      el.innerHTML = '';
+      el.appendChild(document.createTextNode(A));
+      var x = document.createElement('span'); x.className='x'; x.innerHTML='&times;';
+      el.appendChild(x);
+      el.appendChild(document.createTextNode(B));
+    } else if(kind === 'block'){
+      el.innerHTML = '';
+      el.appendChild(document.createTextNode(A));
+      var a = document.createElement('span'); a.className='amp'; a.innerHTML='&amp;';
+      el.appendChild(a);
+      el.appendChild(document.createTextNode(B));
+    } else if(kind === 'possessive'){
+      el.textContent = A + ' & ' + B + '’s';
+    } else {
+      el.textContent = A + ' & ' + B;
+    }
+  });
+
+  /* links rebuilt from config */
+  var venue = C.venue || {};
+  var mapUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(venue.address||'');
+  document.querySelectorAll('[data-map]').forEach(function(el){ el.href = mapUrl; });
+  document.querySelectorAll('[data-album]').forEach(function(el){ el.href = C.photoAlbumUrl || '#'; });
+  document.querySelectorAll('[data-cal]').forEach(function(el){
+    var ev = (C.events||[])[+el.getAttribute('data-cal')];
+    if(!ev) return;
+    el.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+      + '&text=' + encodeURIComponent(A + ' & ' + B + ' - ' + ev.name)
+      + '&dates=' + ev.start + '/' + ev.end
+      + '&ctz=' + encodeURIComponent(C.timezone || 'Asia/Kolkata')
+      + '&location=' + encodeURIComponent(venue.address || '');
+  });
+
+  /* head */
+  var share = C.share || {};
+  if(share.title) document.title = share.title + ' — Our Wedding Invitation';
+})();
+
 /* ---------- falling hearts on the cover ---------- */
 (function(){
   var c=document.getElementById('envhearts'); if(!c) return;
@@ -1120,7 +1193,7 @@ var io=new IntersectionObserver(function(es){
 [].forEach.call(document.querySelectorAll('.rv'),function(el){ io.observe(el); });
 
 /* ---------- countdown to the muhurtham ---------- */
-var TARGET=new Date('2026-11-15T06:00:00+05:30').getTime();
+var TARGET=new Date((C.countdownTo)||'2026-11-15T06:00:00+05:30').getTime();
 function pad(n){return String(n).padStart(2,'0');}
 var cD=document.getElementById('c-d'),cH=document.getElementById('c-h'),
     cM=document.getElementById('c-m'),cS=document.getElementById('c-s');
@@ -1210,8 +1283,8 @@ tick(); var timer=setInterval(tick,1000);
    Notes are saved to a private Google Sheet through an Apps Script web app.
    The script only returns the note text from 15 Nov 2036, so the seal is
    enforced on the server, not here. -------------------------------------- */
-var CAPSULE_URL='https://script.google.com/macros/s/AKfycbyh1_AXaKBT5-TMqx9KqDBTiKcT6PubiiBlI1OIfvw1KAMSs8LZODGfsWQi7reL2rBF/exec';
-var OPEN_DATE=new Date('2036-11-15T06:00:00+05:30').getTime();
+var CAPSULE_URL=((C.capsule||{}).url)||'';
+var OPEN_DATE=new Date(((C.capsule||{}).opensAt)||'2036-11-15T06:00:00+05:30').getTime();
 
 (function(){
   var form=document.getElementById('cap-form'), list=document.getElementById('caplist'),
@@ -1325,7 +1398,7 @@ var OPEN_DATE=new Date('2036-11-15T06:00:00+05:30').getTime();
     if(window.burstHearts) window.burstHearts();
 
     send({name:n,note:t,hp:''}).then(function(){
-      note.textContent = opened ? 'Added to the capsule.' : 'Sealed. See you on 15 November 2036.';
+      note.textContent = opened ? 'Added to the capsule.' : 'Sealed. See you on '+((C.capsule||{}).opensLabel||'15 November 2036')+'.';
     }).catch(function(){
       var q=pending(); q.push({name:n,note:t,hp:''}); pending(q);
       note.textContent='Sealed. It will send as soon as you are back online.';
@@ -1346,8 +1419,8 @@ var OPEN_DATE=new Date('2036-11-15T06:00:00+05:30').getTime();
   }
   function tickCapsule(){
     var diff=OPEN_DATE-Date.now();
-    if(diff<=0){ cdText.textContent='The capsule is open · 15 November 2036'; return; }
-    cdText.textContent='Opens '+span(diff)+' · 15 November 2036';
+    if(diff<=0){ cdText.textContent='The capsule is open · '+((C.capsule||{}).opensLabel||'15 November 2036'); return; }
+    cdText.textContent='Opens '+span(diff)+' · '+((C.capsule||{}).opensLabel||'15 November 2036');
   }
   tickCapsule(); setInterval(tickCapsule,60000);
   flush();
@@ -1418,7 +1491,7 @@ var burstHearts;
 /* ---------- background music ----------
    Played through a YouTube embed rather than a hosted file, so the track stays
    licensed. Swap YT_ID for another video to change the song. -------------- */
-var YT_ID='x84OUIVai3Y';   /* Inkem Inkem — flute instrumental, Flute Siva */
+var YT_ID=C.musicVideoId||'x84OUIVai3Y';   /* flute instrumental */
 (function(){
   var btn=document.getElementById('musicBtn');
   var player=null, ready=false, want=false, loading=false;
